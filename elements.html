@@ -1,170 +1,934 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Education</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
 
-		<!-- Wrapper -->
-		<div id="wrapper">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Education & Skills — Aawaiz Patel</title>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet" />
+	<style>
+		:root {
+			--bg: #F0EDE6;
+			--black: #0A0A0A;
+			--white: #FFFFFF;
+			--yellow: #FFE01B;
+			--red: #FF2800;
+			--blue: #0057FF;
+			--border: 3px solid var(--black);
+			--sh: 5px 5px 0 var(--black);
+			--sh-lg: 8px 8px 0 var(--black);
+			--ff: 'Barlow Condensed', sans-serif;
+			--fb: 'Barlow', sans-serif;
+			--mono: 'Space Mono', monospace
+		}
 
-			<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="logo">Education-skills</a>
-			</header>
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0
+		}
 
-			<!-- Nav -->
-			<nav id="nav">
-				<ul class="links">
-					<li><a href="index.html">projects</a></li>
-					<li><a href="generic.html">Experience</a></li>
-					<li class="active"><a href="elements.html">education</a></li>
-				</ul>
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/?originalSubdomain=in" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://github.com/Aawaizp" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-				</ul>
-			</nav>
+		html {
+			scroll-behavior: smooth
+		}
 
-			<!-- Main -->
-			<div id="main">
+		body {
+			background: var(--bg);
+			color: var(--black);
+			font-family: var(--fb);
+			overflow-x: hidden
+		}
 
-				<!-- Post -->
-				<section class="post">
-					<header class="major">
-						<h1>Education</h1>
-						<p>My academic journey in Artificial Intelligence & Data Science</p>
-					</header>
+		#cur {
+			width: 14px;
+			height: 14px;
+			background: var(--yellow);
+			border: 2px solid var(--black);
+			border-radius: 50%;
+			position: fixed;
+			pointer-events: none;
+			z-index: 9999;
+			transform: translate(-50%, -50%);
+			transition: width .15s, height .15s, border-radius .15s;
+			mix-blend-mode: multiply
+		}
 
-					<!-- Bachelor's Degree -->
-					<h2>B.Tech in Artificial Intelligence & Data Science</h2>
-					<h3>N.K. Orchid College of Engineering & Technology, Solapur</h3>
-					<p><strong>DBATU University</strong></p>
-					<span class="date">2022 - 2025</span>
-					<p>
-						Pursuing Bachelor of Technology in Artificial Intelligence & Data Science with a strong focus on Machine Learning, 
-						Deep Learning, and Data Analytics. Gained hands-on experience through various projects and internships in the field of AI/ML.
-					</p>
-					<p><strong>Key Coursework:</strong></p>
-					<ul>
-						<li>Data Structures and Algorithms</li>
-						<li>Machine Learning and Deep Learning</li>
-						<li>Database Management Systems</li>
-						<li>Web Development and Cloud Computing</li>
-						<li>Data Analytics and Business Intelligence</li>
-						<li>Python Programming and Scientific Computing</li>
-					</ul>
+		nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 500;
+			height: 56px;
+			background: var(--black);
+			display: flex;
+			align-items: stretch
+		}
 
-					<hr style="margin: 40px 0;" />
+		.n-logo {
+			font-family: var(--ff);
+			font-size: 1.5rem;
+			font-weight: 900;
+			letter-spacing: .04em;
+			color: var(--yellow);
+			text-decoration: none;
+			padding: 0 1.5rem;
+			display: flex;
+			align-items: center;
+			border-right: 2px solid rgba(255, 255, 255, .1)
+		}
 
-					<!-- Higher Secondary Education -->
-					<h2>Higher Secondary Certificate (HSC)</h2>
-					<h3>SSA Jr. College of Science, Solapur</h3>
-					<span class="date">2021</span>
-					<p>
-						Completed Higher Secondary Education with Science stream, achieving <strong>82.43%</strong>. 
-						Specialized in Physics, Chemistry, and Mathematics, building a strong foundation in analytical thinking and problem-solving.
-					</p>
+		.n-links {
+			display: flex;
+			margin-left: auto
+		}
 
-					<hr style="margin: 40px 0;" />
+		.n-links a {
+			font-family: var(--mono);
+			font-size: .6rem;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, .5);
+			text-decoration: none;
+			padding: 0 1.1rem;
+			display: flex;
+			align-items: center;
+			border-left: 1px solid rgba(255, 255, 255, .08);
+			transition: all .15s
+		}
 
-					<!-- Secondary Education -->
-					<h2>Secondary School Certificate (SSC)</h2>
-					<h3>M.A. Pangal School, Solapur</h3>
-					<span class="date">2019</span>
-					<p>
-						Completed secondary education with <strong>72.73%</strong>, developing core competencies in mathematics, 
-						science, and computer fundamentals.
-					</p>
+		.n-links a:hover,
+		.n-links a.on {
+			color: var(--black);
+			background: var(--yellow)
+		}
 
-					<hr style="margin: 50px 0;" />
+		.n-cta {
+			font-family: var(--mono);
+			font-size: .6rem;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+			color: var(--black);
+			background: var(--yellow);
+			text-decoration: none;
+			padding: 0 1.4rem;
+			display: flex;
+			align-items: center;
+			border-left: var(--border);
+			font-weight: 700;
+			transition: all .15s
+		}
 
-					<!-- Technical Skills Section -->
-					<header class="major">
-						<h2>Technical Skills</h2>
-					</header>
+		.n-cta:hover {
+			background: var(--red);
+			color: var(--white)
+		}
 
-					<h3>Programming & Libraries</h3>
-					<p>Python (Pandas, NumPy, Matplotlib, Scikit-learn)</p>
+		.btn {
+			font-family: var(--mono);
+			font-size: .62rem;
+			letter-spacing: .1em;
+			text-transform: uppercase;
+			padding: .75rem 1.4rem;
+			border: var(--border);
+			cursor: pointer;
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+			gap: .5rem;
+			font-weight: 700;
+			transition: transform .12s, box-shadow .12s
+		}
 
-					<h3>Machine Learning</h3>
-					<p>Model Development, Training, Evaluation, Feature Engineering</p>
+		.btn:hover {
+			transform: translate(-3px, -3px)
+		}
 
-					<h3>Web Frameworks</h3>
-					<p>Flask, Django</p>
+		.btn:active {
+			transform: translate(0, 0);
+			box-shadow: none
+		}
 
-					<h3>Data Analytics & BI</h3>
-					<p>Power BI, Power Query, DAX, Excel, Data Cleaning</p>
+		.btn-blk {
+			background: var(--black);
+			color: var(--yellow);
+			box-shadow: var(--sh)
+		}
 
-					<h3>Databases</h3>
-					<p>MySQL, SQL Server, SQLite</p>
+		.btn-blk:hover {
+			box-shadow: var(--sh-lg)
+		}
 
-					<hr style="margin: 50px 0;" />
+		.btn-yel {
+			background: var(--yellow);
+			color: var(--black);
+			box-shadow: var(--sh)
+		}
 
-					<!-- Resume Download Section -->
-					<header class="major">
-						<h2>Download My Resume</h2>
-						<p>Get a comprehensive overview of my skills, experience, and projects</p>
-					</header>
+		.btn-yel:hover {
+			box-shadow: var(--sh-lg)
+		}
 
-					<div style="text-align: center; margin: 40px 0;">
-						<a href="assets/resume/Aawaiz Patel - 9307034091(2).pdf" download class="button primary large icon solid fa-download">
-							Download Resume (PDF)
-						</a>
-					</div>
+		.btn-wht {
+			background: var(--white);
+			color: var(--black);
+			box-shadow: var(--sh)
+		}
 
-					<p style="text-align: center; color: #888;">
-						Last Updated: October 2025 | Aawaiz Patel
-					</p>
+		.btn-wht:hover {
+			box-shadow: var(--sh-lg)
+		}
 
-				</section>
+		/* PAGE HEADER — yellow bg, distinct from generic.html */
+		.ph {
+			margin-top: 56px;
+			background: var(--yellow);
+			border-bottom: var(--border);
+			display: grid;
+			grid-template-columns: 1fr 1fr
+		}
 
+		.ph-l {
+			padding: 4rem;
+			border-right: var(--border)
+		}
+
+		.ph-eyebrow {
+			font-family: var(--mono);
+			font-size: .6rem;
+			letter-spacing: .2em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .5);
+			margin-bottom: .8rem
+		}
+
+		.ph-title {
+			font-family: var(--ff);
+			font-size: clamp(3.5rem, 6vw, 7rem);
+			font-weight: 900;
+			line-height: .88;
+			letter-spacing: -.01em;
+			text-transform: uppercase;
+			color: var(--black)
+		}
+
+		.ph-title em {
+			font-style: italic;
+			color: var(--red)
+		}
+
+		.ph-sub {
+			font-family: var(--mono);
+			font-size: .58rem;
+			letter-spacing: .15em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .5);
+			margin-top: 1rem
+		}
+
+		.ph-r {
+			padding: 3.5rem;
+			display: flex;
+			align-items: flex-end;
+			gap: 2.5rem;
+			flex-wrap: wrap
+		}
+
+		.ph-stat {
+			display: flex;
+			flex-direction: column;
+			gap: .3rem
+		}
+
+		.ph-stat-n {
+			font-family: var(--ff);
+			font-size: 3.5rem;
+			font-weight: 900;
+			color: var(--black);
+			line-height: 1;
+			font-style: italic
+		}
+
+		.ph-stat-l {
+			font-family: var(--mono);
+			font-size: .56rem;
+			letter-spacing: .15em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .5)
+		}
+
+		.ph-divider {
+			width: 3px;
+			height: 60px;
+			background: rgba(0, 0, 0, .2);
+			align-self: center
+		}
+
+		/* SECTION HEADERS */
+		.sh-sm {
+			display: flex;
+			align-items: stretch;
+			border-bottom: var(--border);
+			border-top: var(--border)
+		}
+
+		.sh-sm h2 {
+			font-family: var(--ff);
+			font-size: 1.6rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: .04em;
+			padding: .7rem 1.5rem;
+			flex: 1
+		}
+
+		.sh-sm span {
+			font-family: var(--mono);
+			font-size: .56rem;
+			letter-spacing: .15em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .45);
+			padding: 0 1.2rem;
+			display: flex;
+			align-items: center;
+			border-left: var(--border)
+		}
+
+		.sh-blk {
+			background: var(--black)
+		}
+
+		.sh-blk h2 {
+			color: var(--yellow)
+		}
+
+		.sh-blk span {
+			color: rgba(255, 255, 255, .35);
+			border-left-color: rgba(255, 255, 255, .1)
+		}
+
+		/* EDUCATION CARDS */
+		.edu-cards {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			border-bottom: var(--border)
+		}
+
+		.edu-card {
+			padding: 2.5rem;
+			border-right: var(--border);
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			transition: background .12s
+		}
+
+		.edu-card:last-child {
+			border-right: none
+		}
+
+		.edu-card:hover,
+		.edu-card.featured {
+			background: var(--white)
+		}
+
+		.edu-card.featured {
+			background: var(--black)
+		}
+
+		.edu-year {
+			font-family: var(--ff);
+			font-size: 3.5rem;
+			font-weight: 900;
+			font-style: italic;
+			line-height: 1
+		}
+
+		.edu-card.featured .edu-year {
+			color: var(--yellow)
+		}
+
+		.edu-card:not(.featured) .edu-year {
+			color: var(--red)
+		}
+
+		.edu-degree {
+			font-family: var(--ff);
+			font-size: 1.15rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: .03em;
+			line-height: 1.1
+		}
+
+		.edu-card.featured .edu-degree {
+			color: var(--white)
+		}
+
+		.edu-inst {
+			font-family: var(--mono);
+			font-size: .6rem;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .5)
+		}
+
+		.edu-card.featured .edu-inst {
+			color: rgba(255, 255, 255, .45)
+		}
+
+		.edu-univ {
+			font-family: var(--mono);
+			font-size: .56rem;
+			color: rgba(0, 0, 0, .35)
+		}
+
+		.edu-card.featured .edu-univ {
+			color: rgba(255, 255, 255, .3)
+		}
+
+		.edu-score {
+			display: inline-flex;
+			align-items: center;
+			gap: .5rem;
+			font-family: var(--mono);
+			font-size: .68rem;
+			letter-spacing: .08em;
+			padding: .3rem .75rem;
+			border: var(--border);
+			background: var(--yellow);
+			box-shadow: 3px 3px 0 var(--black);
+			width: fit-content;
+			font-weight: 700
+		}
+
+		.edu-desc {
+			font-size: .83rem;
+			line-height: 1.75;
+			color: rgba(0, 0, 0, .6);
+			font-weight: 300
+		}
+
+		.edu-card.featured .edu-desc {
+			color: rgba(255, 255, 255, .6)
+		}
+
+		.edu-courses {
+			display: flex;
+			flex-wrap: wrap;
+			gap: .35rem
+		}
+
+		.edu-c {
+			font-family: var(--mono);
+			font-size: .56rem;
+			letter-spacing: .06em;
+			text-transform: uppercase;
+			padding: .18rem .45rem;
+			border: 1px solid rgba(0, 0, 0, .2);
+			background: var(--bg)
+		}
+
+		.edu-card.featured .edu-c {
+			border-color: rgba(255, 255, 255, .15);
+			background: rgba(255, 255, 255, .08);
+			color: rgba(255, 255, 255, .65)
+		}
+
+		/* SKILLS */
+		.sk-outer {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			border-bottom: var(--border)
+		}
+
+		.sk-col {
+			border-right: var(--border)
+		}
+
+		.sk-col:last-child {
+			border-right: none
+		}
+
+		.sg {
+			padding: 1.8rem 2rem;
+			border-bottom: var(--border)
+		}
+
+		.sg:last-child {
+			border-bottom: none
+		}
+
+		.sg-h {
+			display: flex;
+			align-items: center;
+			gap: .6rem;
+			margin-bottom: 1.1rem;
+			padding-bottom: .8rem;
+			border-bottom: 2px solid var(--black)
+		}
+
+		.sg-ico {
+			font-size: 1rem
+		}
+
+		.sg-lbl {
+			font-family: var(--ff);
+			font-size: 1.1rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: .04em
+		}
+
+		.chips {
+			display: flex;
+			flex-wrap: wrap;
+			gap: .4rem
+		}
+
+		.chip {
+			font-family: var(--mono);
+			font-size: .58rem;
+			letter-spacing: .04em;
+			padding: .28rem .65rem;
+			border: var(--border);
+			background: var(--white);
+			box-shadow: 2px 2px 0 var(--black);
+			cursor: default;
+			transition: all .12s
+		}
+
+		.chip:hover {
+			background: var(--yellow);
+			transform: translate(-2px, -2px);
+			box-shadow: 4px 4px 0 var(--black)
+		}
+
+		.chip.hot {
+			background: var(--black);
+			color: var(--yellow)
+		}
+
+		.chip.hot:hover {
+			background: rgba(0, 0, 0, .8)
+		}
+
+		.chip.blu {
+			background: var(--blue);
+			color: var(--white)
+		}
+
+		.chip.red {
+			background: var(--red);
+			color: var(--white)
+		}
+
+		/* RESUME CTA */
+		.resume-cta {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 3rem;
+			padding: 4rem;
+			background: var(--black);
+			border-bottom: var(--border)
+		}
+
+		.rc-txt {}
+
+		.rc-big {
+			font-family: var(--ff);
+			font-size: clamp(3rem, 5vw, 5.5rem);
+			font-weight: 900;
+			line-height: .88;
+			text-transform: uppercase;
+			color: var(--white);
+			letter-spacing: -.01em
+		}
+
+		.rc-big em {
+			font-style: italic;
+			color: var(--yellow)
+		}
+
+		.rc-sub {
+			font-family: var(--mono);
+			font-size: .6rem;
+			letter-spacing: .14em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, .4);
+			margin-top: .9rem
+		}
+
+		.rc-actions {
+			display: flex;
+			flex-direction: column;
+			gap: .8rem;
+			flex-shrink: 0
+		}
+
+		/* PAGE NAV */
+		.pnav {
+			display: flex;
+			border-top: var(--border)
+		}
+
+		.pn {
+			flex: 1;
+			padding: 1.4rem 2rem;
+			border-right: var(--border);
+			text-decoration: none;
+			color: var(--black);
+			transition: background .12s;
+			display: flex;
+			flex-direction: column;
+			gap: .3rem
+		}
+
+		.pn:last-child {
+			border-right: none;
+			text-align: right
+		}
+
+		.pn:hover {
+			background: var(--yellow)
+		}
+
+		.pn-dir {
+			font-family: var(--mono);
+			font-size: .56rem;
+			letter-spacing: .15em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .4)
+		}
+
+		.pn-ttl {
+			font-family: var(--ff);
+			font-size: 1.4rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: .03em
+		}
+
+		footer {
+			background: var(--black);
+			color: var(--white);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1.6rem 4rem;
+			border-top: var(--border)
+		}
+
+		.f-l {
+			font-family: var(--mono);
+			font-size: .58rem;
+			letter-spacing: .08em;
+			color: rgba(255, 255, 255, .4)
+		}
+
+		.f-l strong {
+			color: var(--yellow)
+		}
+
+		.f-nav {
+			display: flex;
+			gap: 1.5rem
+		}
+
+		.f-nav a {
+			font-family: var(--mono);
+			font-size: .56rem;
+			letter-spacing: .1em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, .4);
+			text-decoration: none;
+			transition: color .15s
+		}
+
+		.f-nav a:hover {
+			color: var(--yellow)
+		}
+
+		.f-r {
+			font-family: var(--mono);
+			font-size: .54rem;
+			color: rgba(255, 255, 255, .2)
+		}
+
+		.fi {
+			opacity: 0;
+			transform: translateY(14px);
+			transition: opacity .5s ease, transform .5s ease
+		}
+
+		.fi.v {
+			opacity: 1;
+			transform: none
+		}
+
+		@media(max-width:1000px) {
+			.ph {
+				grid-template-columns: 1fr
+			}
+
+			.ph-r {
+				display: none
+			}
+
+			.edu-cards {
+				grid-template-columns: 1fr
+			}
+
+			.edu-card {
+				border-right: none;
+				border-bottom: var(--border)
+			}
+
+			.sk-outer {
+				grid-template-columns: 1fr
+			}
+
+			.sk-col {
+				border-right: none
+			}
+
+			.resume-cta {
+				flex-direction: column;
+				gap: 2rem;
+				padding: 2.5rem
+			}
+
+			.n-links {
+				display: none
+			}
+
+			nav {
+				padding: 0
+			}
+
+			footer {
+				flex-direction: column;
+				gap: .8rem;
+				padding: 1.5rem 2rem;
+				text-align: center
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="cur"></div>
+	<nav>
+		<a href="index.html" class="n-logo">AP.</a>
+		<div class="n-links"><a href="index.html">Projects</a><a href="generic.html">Experience</a><a
+				href="elements.html" class="on">Education</a><a
+				href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/" target="_blank">LinkedIn ↗</a><a
+				href="https://github.com/Aawaizp" target="_blank">GitHub ↗</a></div>
+		<a href="mailto:aawaizpatel1@gmail.com" class="n-cta">Hire Me →</a>
+	</nav>
+
+	<!-- PAGE HEADER — yellow, different from generic.html's black header -->
+	<div class="ph">
+		<div class="ph-l">
+			<div class="ph-eyebrow">03 / Education</div>
+			<h1 class="ph-title">Education<br>&amp; <em>Skills</em></h1>
+			<div class="ph-sub">Academic Background · Technical Skills · Resume</div>
+		</div>
+		<div class="ph-r">
+			<div class="ph-stat">
+				<div class="ph-stat-n">2025</div>
+				<div class="ph-stat-l">Graduation Year</div>
+			</div>
+			<div class="ph-divider"></div>
+			<div class="ph-stat">
+				<div class="ph-stat-n">AI·DS</div>
+				<div class="ph-stat-l">Specialization</div>
+			</div>
+			<div class="ph-divider"></div>
+			<div class="ph-stat">
+				<div class="ph-stat-n">82%</div>
+				<div class="ph-stat-l">HSC Score</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- EDUCATION -->
+	<section class="fi">
+		<div class="sh-sm sh-blk">
+			<h2>Academic Journey</h2><span>3 Institutions</span>
+		</div>
+		<div class="edu-cards">
+
+			<div class="edu-card featured">
+				<div class="edu-year">2022</div>
+				<div>
+					<div class="edu-degree">B.Tech in Artificial Intelligence & Data Science</div>
+					<div class="edu-inst" style="margin-top:.4rem">N.K. Orchid College of Engg & Tech</div>
+					<div class="edu-univ">DBATU University · Solapur · 2022–2025</div>
+				</div>
+				<p class="edu-desc">B.Tech in AI & Data Science with deep focus on ML, deep learning, and data
+					analytics. Complemented by internships and 9+ real-world projects delivered beyond the curriculum.
+				</p>
+				<div class="edu-courses">
+					<span class="edu-c">ML & Deep Learning</span><span class="edu-c">DSA</span><span
+						class="edu-c">DBMS</span>
+					<span class="edu-c">Data Analytics</span><span class="edu-c">Web Dev</span><span class="edu-c">Cloud
+						Computing</span>
+					<span class="edu-c">Python</span><span class="edu-c">Business Intelligence</span>
+				</div>
 			</div>
 
-			<!-- Footer -->
-			<footer id="footer">
-				<section class="split contact">
-					<section class="alt">
-						<h3>Address</h3>
-						<p>India - Maharashtra - Solapur</p>
-					</section>
-					<section>
-						<h3>Phone</h3>
-						<p><a href="#">(+91) 930-703-4091</a></p>
-					</section>
-					<section>
-						<h3>Email</h3>
-						<p><a href="mailto:aawaizpatel1@gmail.com">aawaizpatel1@gmail.com</a></p>
-					</section>
-					<section>
-						<h3>Social</h3>
-						<ul class="icons alt">
-							<li><a href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/?originalSubdomain=in" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/Aawaizp" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</section>
-				</section>
-			</footer>
+			<div class="edu-card">
+				<div class="edu-year">2021</div>
+				<div>
+					<div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+					<div class="edu-inst" style="margin-top:.4rem">SSA Jr. College of Science, Solapur</div>
+				</div>
+				<div class="edu-score">🏅 82.43%</div>
+				<p class="edu-desc">Completed HSC with Science stream (Physics, Chemistry, Mathematics), building strong
+					analytical and problem-solving foundations.</p>
+				<div class="edu-courses"><span class="edu-c">Physics</span><span class="edu-c">Chemistry</span><span
+						class="edu-c">Mathematics</span></div>
+			</div>
 
-			<!-- Copyright -->
-			<div id="copyright">
-				<ul><li>&copy; Aawaiz Patel</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+			<div class="edu-card">
+				<div class="edu-year">2019</div>
+				<div>
+					<div class="edu-degree">Secondary School Certificate (SSC)</div>
+					<div class="edu-inst" style="margin-top:.4rem">M.A. Pangal School, Solapur</div>
+				</div>
+				<div class="edu-score">🏅 72.73%</div>
+				<p class="edu-desc">Completed secondary education with focus on mathematics, science, and computer
+					fundamentals. Core problem-solving and logical reasoning skills.</p>
+				<div class="edu-courses"><span class="edu-c">Mathematics</span><span class="edu-c">Science</span><span
+						class="edu-c">Computers</span></div>
 			</div>
 
 		</div>
+	</section>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+	<!-- SKILLS -->
+	<section class="fi">
+		<div class="sh-sm">
+			<h2>Technical Skills</h2><span>Full Stack</span>
+		</div>
+		<div class="sk-outer">
+			<div class="sk-col">
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">🐍</span><span class="sg-lbl">Python & Libraries</span></div>
+					<div class="chips">
+						<span class="chip hot">Python</span><span class="chip hot">Pandas</span><span
+							class="chip hot">NumPy</span>
+						<span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span
+							class="chip">Plotly</span>
+						<span class="chip">Scikit-learn</span><span class="chip">XGBoost</span><span
+							class="chip">OpenCV</span><span class="chip">HuggingFace</span>
+					</div>
+				</div>
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">🗄️</span><span class="sg-lbl">SQL & Databases</span></div>
+					<div class="chips">
+						<span class="chip hot">SQL</span><span class="chip hot">MySQL</span><span class="chip hot">SQL
+							Server</span>
+						<span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span
+							class="chip">SQLAlchemy</span>
+						<span class="chip">CTEs</span><span class="chip">Window Functions</span><span
+							class="chip">Joins</span>
+					</div>
+				</div>
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">📈</span><span class="sg-lbl">BI & Reporting</span></div>
+					<div class="chips">
+						<span class="chip red">Power BI</span><span class="chip red">DAX</span><span
+							class="chip red">Power Query</span>
+						<span class="chip red">Tableau</span><span class="chip">Excel</span>
+						<span class="chip">KPI Design</span><span class="chip">Dashboard Design</span><span
+							class="chip">Scenario Analysis</span>
+					</div>
+				</div>
+			</div>
+			<div class="sk-col">
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">⚙️</span><span class="sg-lbl">Data Engineering & ETL</span>
+					</div>
+					<div class="chips">
+						<span class="chip blu">ETL Pipelines</span><span class="chip blu">Medallion Architecture</span>
+						<span class="chip blu">Star Schema</span><span class="chip blu">Data Warehousing</span>
+						<span class="chip">Fact & Dim Tables</span><span class="chip">Data Modeling</span><span
+							class="chip">Data Transformation</span>
+					</div>
+				</div>
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">🤖</span><span class="sg-lbl">AI · ML · NLP · GenAI</span>
+					</div>
+					<div class="chips">
+						<span class="chip hot">Machine Learning</span><span class="chip hot">Classification</span>
+						<span class="chip hot">Feature Engineering</span><span class="chip">NLP & Text
+							Classification</span>
+						<span class="chip">LLMs (LLaMA 3, T5)</span><span class="chip">GenAI</span><span
+							class="chip">Agentic AI</span>
+						<span class="chip">Computer Vision</span><span class="chip">Model Evaluation</span>
+					</div>
+				</div>
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">🛠️</span><span class="sg-lbl">Frameworks, Cloud &
+							Tools</span></div>
+					<div class="chips">
+						<span class="chip hot">Flask</span><span class="chip hot">Streamlit</span><span
+							class="chip">Django</span>
+						<span class="chip">Oracle Cloud OCI</span><span class="chip">Git / GitHub</span>
+						<span class="chip">Jupyter</span><span class="chip">Google Colab</span><span
+							class="chip">Supabase</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-	</body>
+	<!-- RESUME CTA -->
+	<div class="resume-cta fi">
+		<div class="rc-txt">
+			<div class="rc-big">Download<br><em>My Resume</em></div>
+			<div class="rc-sub">Last Updated October 2025 · PDF Format</div>
+		</div>
+		<div class="rc-actions">
+			<a href="https://aawaizp.github.io/AawaizPortfolio.github.io/assets/resume/Aawaiz%20Patel%20-%209307034091(2).pdf"
+				target="_blank" class="btn btn-yel">↓ Download Resume (PDF)</a>
+			<a href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/" target="_blank" class="btn btn-wht">View
+				LinkedIn Profile ↗</a>
+		</div>
+	</div>
+
+	<div class="pnav">
+		<a href="index.html" class="pn">
+			<div class="pn-dir">← Go to</div>
+			<div class="pn-ttl">Projects</div>
+		</a>
+		<a href="generic.html" class="pn">
+			<div class="pn-dir">Go to →</div>
+			<div class="pn-ttl">Experience</div>
+		</a>
+	</div>
+
+	<footer>
+		<div class="f-l">© 2025 <strong>Aawaiz Patel</strong> · Solapur, India</div>
+		<div class="f-nav"><a href="index.html">Work</a><a href="generic.html">Experience</a><a
+				href="elements.html">Education</a><a href="https://github.com/Aawaizp" target="_blank">GitHub</a></div>
+		<div class="f-r">AI & Data Science Engineer</div>
+	</footer>
+
+	<script>
+		const cur = document.getElementById('cur');
+		document.addEventListener('mousemove', e => { cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px' });
+		document.querySelectorAll('a,button,.chip').forEach(el => { el.addEventListener('mouseenter', () => { cur.style.width = '28px'; cur.style.height = '28px'; cur.style.borderRadius = '4px' }); el.addEventListener('mouseleave', () => { cur.style.width = '14px'; cur.style.height = '14px'; cur.style.borderRadius = '50%' }) });
+		const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v') }), { threshold: .06 });
+		document.querySelectorAll('.fi').forEach(el => io.observe(el));
+	</script>
+</body>
+
 </html>
