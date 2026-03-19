@@ -1,278 +1,1833 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Aawaiz Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
+<!DOCTYPE html>
+<html lang="en">
 
-	<body class="is-preload">
-		<!-- Wrapper -->
-		<div id="wrapper" class="fade-in">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Aawaiz Patel — AI · Data · Analytics</title>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet" />
+	<style>
+		:root {
+			--bg: #F0EDE6;
+			--black: #0A0A0A;
+			--white: #FFFFFF;
+			--yellow: #FFE01B;
+			--red: #FF2800;
+			--blue: #0057FF;
+			--border: 3px solid var(--black);
+			--sh: 5px 5px 0 var(--black);
+			--sh-lg: 8px 8px 0 var(--black);
+			--sh-xl: 12px 12px 0 var(--black);
+			--ff: 'Barlow Condensed', sans-serif;
+			--fb: 'Barlow', sans-serif;
+			--mono: 'Space Mono', monospace;
+		}
 
-			<!-- Intro -->
-			<div id="intro">
-				<h1>
- <h1>
-  <span style="font-size: 0.8em;">AI·Data Science·Analytics</span><br>
-  Portfolio
-</h1>
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0
+		}
 
+		html {
+			scroll-behavior: smooth
+		}
 
-				<p>
-					Passionate about AI, Data Science & Analytics—turning problems into data-driven solutions.<br>
-					Proficient in Python, Machine Learning, SQL, Power BI & Tableau. <br>
-					<a href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/?originalSubdomain=in">@aawaiz</a>.
-				</p>
-				<ul class="actions">
-					<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-				</ul>
-			</div>
+		body {
+			background: var(--bg);
+			color: var(--black);
+			font-family: var(--fb);
+			overflow-x: hidden
+		}
 
-			<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="logo">PORTFOLIO</a>
-			</header>
+		/* CURSOR */
+		#cur {
+			width: 14px;
+			height: 14px;
+			background: var(--yellow);
+			border: 2px solid var(--black);
+			border-radius: 50%;
+			position: fixed;
+			pointer-events: none;
+			z-index: 9999;
+			transform: translate(-50%, -50%);
+			transition: width .15s, height .15s, border-radius .15s;
+			mix-blend-mode: multiply
+		}
 
-			<!-- Nav -->
-			<nav id="nav">
-				<ul class="links">
-					<li class="active"><a href="index.html">Projects</a></li>
-					<li><a href="generic.html">experience </a></li>
-					<li><a href="elements.html">education</a></li>
-				</ul>
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/?originalSubdomain=in" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://github.com/Aawaizp" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-				</ul>
-			</nav>
+		/* NAV */
+		nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 500;
+			height: 56px;
+			background: var(--black);
+			display: flex;
+			align-items: stretch
+		}
 
-			<!-- Main -->
-			<div id="main">
+		.n-logo {
+			font-family: var(--ff);
+			font-size: 1.5rem;
+			font-weight: 900;
+			letter-spacing: .04em;
+			color: var(--yellow);
+			text-decoration: none;
+			padding: 0 1.5rem;
+			display: flex;
+			align-items: center;
+			border-right: 2px solid rgba(255, 255, 255, .1)
+		}
 
-				<!-- Featured Post -->
-				<article class="post featured">
-					<header class="major">
-						<h2><a href="https://github.com/Aawaizp/UPASTHITI-AI">UPASTHITI-AI</a></h2>
-						<p>
-							Smart attendance system powered by real-time face recognition technology.
-							Automates attendance tracking with instant report generation and email notifications.
-							Eliminates manual processes, saving time and improving accuracy for educational institutions.
-						</p>
-					</header>
-					<a href="https://github.com/Aawaizp/UPASTHITI-AI" class="image main"><img src="images/Faceimg.png" alt="UPASTHITI-AI Project Image" /></a>
-					<ul class="actions special">
-						<li><a href="https://github.com/Aawaizp/UPASTHITI-AI" class="button large">VIEW PROJECT</a></li>
-					</ul>
-				</article>
+		.n-links {
+			display: flex;
+			margin-left: auto
+		}
 
-				<!-- Posts -->
-				<section class="posts">
+		.n-links a {
+			font-family: var(--mono);
+			font-size: .6rem;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, .5);
+			text-decoration: none;
+			padding: 0 1.1rem;
+			display: flex;
+			align-items: center;
+			border-left: 1px solid rgba(255, 255, 255, .08);
+			transition: all .15s
+		}
 
-					<article>
-						<header>
-							<h2><a href="https://github.com/Aawaizp/PortfolioProjects/blob/main/project_SQLQuery1.sql">COVID-19<br />Data Exploration</a></h2>
-						</header>
-						<a href="https://github.com/Aawaizp/PortfolioProjects/blob/main/project_SQLQuery1.sql" class="image fit"><img src="images/COVID-19.jpg" alt="COVID-19 Data Exploration" /></a>
-						<p>Used SQL Server to explore and analyze global COVID-19 data.</p>
-						<ul class="actions special">
-							<li><a href="https://github.com/Aawaizp/PortfolioProjects/blob/main/project_SQLQuery1.sql" class="button">VIEW PROJECT</a></li>
-						</ul>
-					</article>
+		.n-links a:hover,
+		.n-links a.on {
+			color: var(--black);
+			background: var(--yellow)
+		}
 
-					<article>
-						<header>
-							<h2><a href="https://public.tableau.com/app/profile/aawaiz.patel/viz/TableauDahs/Dashboard1">Tableau Dashboards<br />for COVID-19 Data</a></h2>
-						</header>
-						<a href="https://public.tableau.com/app/profile/aawaiz.patel/viz/TableauDahs/Dashboard1" class="image fit"><img src="images/Tableau.png" alt="Tableau Dashboards" /></a>
-						<p>Interactive Tableau dashboards for COVID-19 analysis, Financial Forecasting, and Fantasy Football insights.</p>
-						<ul class="actions special">
-							<li><a href="https://public.tableau.com/app/profile/aawaiz.patel/viz/TableauDahs/Dashboard1" class="button">VIEW PROJECT</a></li>
-						</ul>
-					</article>
+		.n-cta {
+			font-family: var(--mono);
+			font-size: .6rem;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+			color: var(--black);
+			background: var(--yellow);
+			text-decoration: none;
+			padding: 0 1.4rem;
+			display: flex;
+			align-items: center;
+			border-left: var(--border);
+			font-weight: 700;
+			transition: all .15s
+		}
 
-					<article>
-						<header>
-							<h2><a href="https://github.com/Aawaizp/PortfolioProjects/blob/main/project2_SQLQuery1.sql">Data Cleaning<br />in SQL</a></h2>
-						</header>
-						<a href="https://github.com/Aawaizp/PortfolioProjects/blob/main/project2_SQLQuery1.sql" class="image fit"><img src="images/House.png" alt="SQL Data Cleaning" /></a>
-						<p>Cleaned and transformed raw housing data using SQL Server for structured analysis and reporting.</p>
-						<ul class="actions special">
-							<li><a href="https://github.com/Aawaizp/PortfolioProjects/blob/main/project2_SQLQuery1.sql" class="button">VIEW PROJECT</a></li>
-						</ul>
-					</article>
-					<!-- Project: AI-Powered Demand Forecasting & Price Optimization System -->
-<article>
-  <header>
-    <h2>
-      <a href="https://github.com/Aawaizp/demand-pricing-optimizer" target="_blank" rel="noopener noreferrer">
-        🤖 AI-Powered Demand Forecasting & Price Optimization System
-      </a>
-    </h2>
-    <p class="project-tagline">Forecast demand with ML and recommend prices to maximize revenue & margin — pipeline + optimizer + backtests.</p>
-  </header>
+		.n-cta:hover {
+			background: var(--red);
+			color: var(--white)
+		}
 
-  <a href="https://github.com/Aawaizp/demand-pricing-optimizer" class="image fit" target="_blank" rel="noopener noreferrer">
-    <img src="images/pricing.png" alt="Demand Pricing Optimizer" />
-  </a>
+		/* HERO */
+		#hero {
+			min-height: 100vh;
+			padding-top: 56px;
+			display: grid;
+			grid-template-columns: 1fr 420px;
+			border-bottom: var(--border)
+		}
 
-  <p>
-    Built an ensemble forecasting pipeline, price-elasticity optimizer, and model artifacts ready for API deployment.
-  </p>
+		.hl {
+			padding: 6rem 3.5rem 4rem 4rem;
+			border-right: var(--border);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			position: relative;
+			overflow: hidden
+		}
 
-  <ul class="actions special">
-    <li><a href="https://github.com/Aawaizp/demand-pricing-optimizer" class="button">VIEW CODE</a></li>
-    <li><a href="https://github.com/Aawaizp/demand-pricing-optimizer#readme" class="button">README</a></li>
-  </ul>
-</article>
+		.hl-bg {
+			position: absolute;
+			bottom: -2rem;
+			right: -1rem;
+			font-family: var(--ff);
+			font-size: 22rem;
+			font-weight: 900;
+			color: rgba(0, 0, 0, .04);
+			line-height: 1;
+			pointer-events: none;
+			user-select: none;
+			letter-spacing: -.05em
+		}
 
-<!-- Project: BizInsight AI — Autonomous Business Data Analyzer -->
-<article data-ribbon="LIVE DEMO">
-  <header>
-    <h2>
-      <a href="https://github.com/Aawaizp/bizinsight-ai" target="_blank" rel="noopener noreferrer">
-        BizInsight AI — Autonomous Business Data Analyzer
-      </a>
-    </h2>
-    <p class="project-tagline">Self-serve AI that ingests spreadsheets and returns dashboards, insights, and actions (Streamlit demo available).</p>
-  </header>
+		.h-tag {
+			display: inline-flex;
+			align-items: center;
+			gap: .6rem;
+			background: var(--yellow);
+			border: var(--border);
+			box-shadow: var(--sh);
+			padding: .3rem .85rem;
+			margin-bottom: 2rem;
+			width: fit-content;
+			animation: up .5s ease both
+		}
 
-  <a href="https://bizinsight-ai-kdbvmmr7c5mt8nfdch2z4e.streamlit.app/" class="image fit" target="_blank" rel="noopener noreferrer">
-    <img src="images/BizInsight AI.png" alt="BizInsight AI Demo" />
-  </a>
+		.h-tag-dot {
+			width: 7px;
+			height: 7px;
+			background: var(--black);
+			border-radius: 50%;
+			animation: blink 1.5s infinite
+		}
 
-  <p>
-    Auto EDA, KPI tracking, segmentation and natural-language Q&A over your data. Live demo: upload files and try it yourself.
-  </p>
+		@keyframes blink {
 
-  <ul class="actions special">
-    <li><a href="https://github.com/Aawaizp/bizinsight-ai" class="button">VIEW CODE</a></li>
-    <li><a href="https://bizinsight-ai-kdbvmmr7c5mt8nfdch2z4e.streamlit.app/" class="button">LIVE DEMO</a></li>
-  </ul>
-</article>
+			0%,
+			100% {
+				opacity: 1
+			}
 
-					<article>
-						<header>
-							<h2><a href="https://github.com/Aawaizp/PortfolioProjects/blob/main/data-analyst.ipynb">Movie Correlation<br />with Python</a></h2>
-						</header>
-						<a href="https://github.com/Aawaizp/PortfolioProjects/blob/main/data-analyst.ipynb" class="image fit"><img src="images/tyson-moultrie-BQTHOGNHo08-unsplash.jpg" alt="Movie Correlation Project" /></a>
-						<p>Analyzed which variables most influence movie revenue using Python and data visualization libraries.</p>
-						<ul class="actions special">
-							<li><a href="https://github.com/Aawaizp/PortfolioProjects/blob/main/data-analyst.ipynb" class="button">VIEW PROJECT</a></li>
-						</ul>
-					</article>
+			50% {
+				opacity: .15
+			}
+		}
 
-<!-- 					
-					<article>
-						<header>
-							<span class="date">April 11, 2017</span>
-							<h2><a href="#">Odio magna<br />sed consectetur</a></h2>
-						</header>
-						<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-						<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-						<ul class="actions special">
-							<li><a href="#" class="button">Full Story</a></li>
-						</ul>
-					</article> -->
+		.h-tag span {
+			font-family: var(--mono);
+			font-size: .58rem;
+			letter-spacing: .15em;
+			text-transform: uppercase;
+			font-weight: 700
+		}
 
-					<!-- <article>
-						<header>
-							<span class="date">April 7, 2017</span>
-							<h2><a href="#">Augue lorem<br />primis vestibulum</a></h2>
-						</header>
-						<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-						<p>Donec eget ex magna. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-						<ul class="actions special">
-							<li><a href="#" class="button">Full Story</a></li>
-						</ul>
-					</article>
-					 -->
+		h1.h-name {
+			font-family: var(--ff);
+			font-size: clamp(5rem, 9vw, 10.5rem);
+			font-weight: 900;
+			line-height: .85;
+			letter-spacing: -.01em;
+			margin-bottom: .4rem;
+			animation: up .5s .06s ease both;
+			position: relative;
+			z-index: 1
+		}
 
-				</section>
+		h1.h-name em {
+			font-style: italic;
+			color: var(--red)
+		}
 
-				<!-- Footer -->
-				<footer>
-					<div class="pagination">
-						<!-- Pagination (optional) -->
-					</div>
-				</footer>
-			</div>
+		.h-sub {
+			font-family: var(--mono);
+			font-size: .68rem;
+			letter-spacing: .18em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .5);
+			margin-bottom: 2.5rem;
+			animation: up .5s .12s ease both;
+			position: relative;
+			z-index: 1
+		}
 
-			<!-- Footer -->
-			<footer id="footer">
-				<!-- Comment Section (Keep as per your request) -->
-				<!--
-				<section>
-					<form method="post" action="#">
-						<div class="fields">
-							<div class="field">
-								<label for="name">Name</label>
-								<input type="text" name="name" id="name" />
-							</div>
-							<div class="field">
-								<label for="email">Email</label>
-								<input type="text" name="email" id="email" />
-							</div>
-							<div class="field">
-								<label for="message">Message</label>
-								<textarea name="message" id="message" rows="3"></textarea>
-							</div>
-						</div>
-						<ul class="actions">
-							<li><input type="submit" value="Send Message" /></li>
-						</ul>
-					</form>
-				</section>
-				-->
+		.h-bio {
+			font-size: .98rem;
+			line-height: 1.8;
+			max-width: 480px;
+			color: rgba(0, 0, 0, .72);
+			font-weight: 300;
+			margin-bottom: 2.8rem;
+			animation: up .5s .18s ease both;
+			position: relative;
+			z-index: 1
+		}
 
-				<section class="split contact">
-					<section class="alt">
-						<h3>Location</h3>
-						<p>India - Maharashtra - Solapur</p>
-					</section>
-					<section>
-						<h3>Phone</h3>
-						<p><a href="#">(+91) 930-703-4091</a></p>
-					</section>
-					<section>
-	<h3>Email</h3>
-	<p><a href="mailto:aawaizpatel1@gmail.com">aawaizpatel1@gmail.com</a></p>
-</section>
+		.h-bio strong {
+			font-weight: 600;
+			color: var(--black)
+		}
 
-					<section>
-						<h3>Social</h3>
-						<ul class="icons alt">
-							<li><a href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/?originalSubdomain=in" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/Aawaizp" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</section>
-				</section>
-			</footer>
+		.h-btns {
+			display: flex;
+			gap: .8rem;
+			flex-wrap: wrap;
+			animation: up .5s .24s ease both;
+			position: relative;
+			z-index: 1
+		}
 
-			<!-- Copyright -->
-			<div id="copyright">
-				<ul>
-					<li>&copy; Aawaiz Patel</li>
-					<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-				</ul>
+		@keyframes up {
+			from {
+				opacity: 0;
+				transform: translateY(18px)
+			}
+
+			to {
+				opacity: 1;
+				transform: none
+			}
+		}
+
+		.btn {
+			font-family: var(--mono);
+			font-size: .62rem;
+			letter-spacing: .1em;
+			text-transform: uppercase;
+			padding: .75rem 1.4rem;
+			border: var(--border);
+			cursor: pointer;
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+			gap: .5rem;
+			font-weight: 700;
+			transition: transform .12s, box-shadow .12s
+		}
+
+		.btn:hover {
+			transform: translate(-3px, -3px)
+		}
+
+		.btn-blk {
+			background: var(--black);
+			color: var(--yellow);
+			box-shadow: var(--sh)
+		}
+
+		.btn-blk:hover {
+			box-shadow: var(--sh-lg)
+		}
+
+		.btn-wht {
+			background: var(--white);
+			color: var(--black);
+			box-shadow: var(--sh)
+		}
+
+		.btn-wht:hover {
+			box-shadow: var(--sh-lg)
+		}
+
+		.btn-yel {
+			background: var(--yellow);
+			color: var(--black);
+			box-shadow: var(--sh)
+		}
+
+		.btn-yel:hover {
+			box-shadow: var(--sh-lg)
+		}
+
+		.btn:active {
+			transform: translate(0, 0);
+			box-shadow: none
+		}
+
+		/* hero right */
+		.hr {
+			display: flex;
+			flex-direction: column;
+			background: var(--black)
+		}
+
+		.hr-top {
+			flex: 1;
+			padding: 4rem 2rem 2rem;
+			border-bottom: var(--border);
+			display: flex;
+			flex-direction: column;
+			gap: .7rem;
+			position: relative;
+			overflow: hidden
+		}
+
+		.hr-art {
+			position: absolute;
+			bottom: -3rem;
+			right: -2rem;
+			font-family: var(--ff);
+			font-size: 18rem;
+			font-weight: 900;
+			color: rgba(255, 224, 27, .05);
+			line-height: 1;
+			user-select: none
+		}
+
+		.hic {
+			background: rgba(255, 255, 255, .06);
+			border: 1px solid rgba(255, 255, 255, .1);
+			padding: 1rem 1.2rem;
+			position: relative;
+			z-index: 1
+		}
+
+		.hic-l {
+			font-family: var(--mono);
+			font-size: .52rem;
+			letter-spacing: .18em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, .4);
+			margin-bottom: .25rem;
+			display: flex;
+			align-items: center;
+			gap: .4rem
+		}
+
+		.hic-dot {
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: var(--yellow);
+			flex-shrink: 0;
+			animation: blink 1.5s infinite
+		}
+
+		.hic-v {
+			font-size: .85rem;
+			font-weight: 500;
+			color: var(--white)
+		}
+
+		.hr-stats {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr)
+		}
+
+		.hstat {
+			padding: 1.2rem .8rem;
+			text-align: center;
+			border-right: 1px solid rgba(255, 255, 255, .08)
+		}
+
+		.hstat:last-child {
+			border-right: none
+		}
+
+		.hstat-n {
+			font-family: var(--ff);
+			font-size: 2.4rem;
+			font-weight: 900;
+			color: var(--yellow);
+			line-height: 1;
+			font-style: italic
+		}
+
+		.hstat-l {
+			font-family: var(--mono);
+			font-size: .5rem;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, .38);
+			margin-top: .2rem
+		}
+
+		/* MARQUEE */
+		.mq {
+			overflow: hidden;
+			background: var(--red);
+			border-top: var(--border);
+			border-bottom: var(--border);
+			padding: .65rem 0
+		}
+
+		.mq-inner {
+			display: flex;
+			white-space: nowrap;
+			animation: mq 30s linear infinite
+		}
+
+		.mq-item {
+			font-family: var(--ff);
+			font-size: 1.1rem;
+			font-weight: 700;
+			letter-spacing: .08em;
+			text-transform: uppercase;
+			color: var(--white);
+			flex-shrink: 0;
+			margin-right: 2rem
+		}
+
+		.mq-sep {
+			color: rgba(255, 255, 255, .4);
+			margin-right: 2rem;
+			flex-shrink: 0
+		}
+
+		@keyframes mq {
+			from {
+				transform: translateX(0)
+			}
+
+			to {
+				transform: translateX(-50%)
+			}
+		}
+
+		/* SECTION HEADER */
+		.sec-hdr {
+			display: flex;
+			align-items: stretch;
+			border-bottom: var(--border)
+		}
+
+		.sec-num {
+			font-family: var(--ff);
+			font-size: 3.5rem;
+			font-weight: 900;
+			line-height: 1;
+			padding: .4rem 1.2rem;
+			background: var(--black);
+			color: var(--yellow);
+			border-right: var(--border);
+			display: flex;
+			align-items: center;
+			flex-shrink: 0;
+			font-style: italic
+		}
+
+		.sec-ttl {
+			font-family: var(--ff);
+			font-size: clamp(1.8rem, 3.5vw, 3rem);
+			font-weight: 900;
+			letter-spacing: .02em;
+			padding: .5rem 1.5rem;
+			display: flex;
+			align-items: center;
+			flex: 1;
+			text-transform: uppercase
+		}
+
+		.sec-meta {
+			font-family: var(--mono);
+			font-size: .58rem;
+			letter-spacing: .15em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .4);
+			padding: 0 1.5rem;
+			display: flex;
+			align-items: center;
+			flex-shrink: 0;
+			border-left: var(--border)
+		}
+
+		section.sec {
+			border-bottom: var(--border)
+		}
+
+		/* ABOUT */
+		.about-bio {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			border-bottom: var(--border)
+		}
+
+		.ab-l {
+			padding: 2.8rem;
+			border-right: var(--border)
+		}
+
+		.ab-l h3 {
+			font-family: var(--ff);
+			font-size: 1.8rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: .03em;
+			margin-bottom: 1rem
+		}
+
+		.ab-l p {
+			font-size: .88rem;
+			line-height: 1.85;
+			color: rgba(0, 0, 0, .68);
+			font-weight: 300
+		}
+
+		.ab-l p+p {
+			margin-top: .9rem
+		}
+
+		.ab-l strong {
+			font-weight: 600;
+			color: var(--black)
+		}
+
+		.ab-r {
+			padding: 2.8rem;
+			display: flex;
+			flex-direction: column;
+			gap: .55rem
+		}
+
+		.a-row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: .6rem .85rem;
+			border: var(--border);
+			background: var(--white);
+			box-shadow: 3px 3px 0 var(--black)
+		}
+
+		.a-row-l {
+			font-family: var(--mono);
+			font-size: .58rem;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .5)
+		}
+
+		.a-row-v {
+			font-family: var(--mono);
+			font-size: .7rem;
+			font-weight: 700;
+			text-align: right
+		}
+
+		.a-row-v span {
+			color: var(--red)
+		}
+
+		/* role cards */
+		.role-cards {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr)
+		}
+
+		.rc {
+			padding: 2rem 1.6rem;
+			border-right: var(--border);
+			border-bottom: var(--border);
+			position: relative;
+			overflow: hidden;
+			transition: background .15s
+		}
+
+		.rc:last-child {
+			border-right: none
+		}
+
+		.rc:hover {
+			background: var(--white)
+		}
+
+		.rc-bar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 4px
+		}
+
+		.rc-ico {
+			font-size: 1.6rem;
+			margin-bottom: 1rem
+		}
+
+		.rc-tag {
+			font-family: var(--mono);
+			font-size: .56rem;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+			padding: .2rem .55rem;
+			border: var(--border);
+			display: inline-block;
+			margin-bottom: .8rem;
+			font-weight: 700;
+			box-shadow: 2px 2px 0 var(--black)
+		}
+
+		.rc-ttl {
+			font-family: var(--ff);
+			font-size: 1.2rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: .03em;
+			margin-bottom: .6rem
+		}
+
+		.rc-p {
+			font-size: .8rem;
+			line-height: 1.78;
+			color: rgba(0, 0, 0, .62);
+			font-weight: 300
+		}
+
+		.rc-ai .rc-bar {
+			background: var(--black)
+		}
+
+		.rc-ai .rc-tag {
+			background: var(--yellow)
+		}
+
+		.rc-ds .rc-bar {
+			background: var(--blue)
+		}
+
+		.rc-ds .rc-tag {
+			background: var(--white)
+		}
+
+		.rc-da .rc-bar {
+			background: var(--red)
+		}
+
+		.rc-da .rc-tag {
+			background: var(--white)
+		}
+
+		.rc-de .rc-bar {
+			background: rgba(0, 0, 0, .6)
+		}
+
+		.rc-de .rc-tag {
+			background: var(--white)
+		}
+
+		/* SKILLS */
+		.sk-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr
+		}
+
+		.sk-col {
+			border-right: var(--border)
+		}
+
+		.sk-col:last-child {
+			border-right: none
+		}
+
+		.sg {
+			padding: 1.8rem 2rem;
+			border-bottom: var(--border)
+		}
+
+		.sg:last-child {
+			border-bottom: none
+		}
+
+		.sg-h {
+			display: flex;
+			align-items: center;
+			gap: .6rem;
+			margin-bottom: 1.1rem;
+			padding-bottom: .8rem;
+			border-bottom: 2px solid var(--black)
+		}
+
+		.sg-ico {
+			font-size: 1rem
+		}
+
+		.sg-lbl {
+			font-family: var(--ff);
+			font-size: 1.1rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: .04em
+		}
+
+		.chips {
+			display: flex;
+			flex-wrap: wrap;
+			gap: .4rem
+		}
+
+		.chip {
+			font-family: var(--mono);
+			font-size: .58rem;
+			letter-spacing: .04em;
+			padding: .28rem .65rem;
+			border: var(--border);
+			background: var(--white);
+			box-shadow: 2px 2px 0 var(--black);
+			cursor: default;
+			transition: all .12s
+		}
+
+		.chip:hover {
+			background: var(--yellow);
+			transform: translate(-2px, -2px);
+			box-shadow: 4px 4px 0 var(--black)
+		}
+
+		.chip.hot {
+			background: var(--black);
+			color: var(--yellow)
+		}
+
+		.chip.hot:hover {
+			background: rgba(0, 0, 0, .8)
+		}
+
+		.chip.blu {
+			background: var(--blue);
+			color: var(--white)
+		}
+
+		.chip.red {
+			background: var(--red);
+			color: var(--white)
+		}
+
+		/* PROJECTS */
+		.pg {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr)
+		}
+
+		.pc {
+			border-right: var(--border);
+			border-bottom: var(--border);
+			display: flex;
+			flex-direction: column;
+			transition: background .15s
+		}
+
+		.pc:nth-child(3n) {
+			border-right: none
+		}
+
+		.pc:hover {
+			background: var(--white)
+		}
+
+		.pc:hover .pc-inner {
+			transform: translate(-3px, -3px);
+			box-shadow: var(--sh-lg)
+		}
+
+		.pc-inner {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			transition: transform .15s, box-shadow .15s
+		}
+
+		.pc-top {
+			padding: 1.6rem;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			border-bottom: var(--border)
+		}
+
+		.pc-meta {
+			display: flex;
+			align-items: center;
+			gap: .35rem;
+			margin-bottom: 1.2rem;
+			flex-wrap: wrap
+		}
+
+		.pc-tag {
+			font-family: var(--mono);
+			font-size: .54rem;
+			letter-spacing: .09em;
+			text-transform: uppercase;
+			padding: .17rem .48rem;
+			border: var(--border);
+			background: var(--yellow);
+			font-weight: 700
+		}
+
+		.pc-feat {
+			font-family: var(--mono);
+			font-size: .53rem;
+			letter-spacing: .08em;
+			text-transform: uppercase;
+			padding: .17rem .48rem;
+			border: var(--border);
+			background: var(--black);
+			color: var(--yellow);
+			font-weight: 700
+		}
+
+		.pc-live {
+			font-family: var(--mono);
+			font-size: .53rem;
+			letter-spacing: .08em;
+			text-transform: uppercase;
+			padding: .17rem .48rem;
+			border: var(--border);
+			background: var(--red);
+			color: var(--white);
+			font-weight: 700
+		}
+
+		.pc-ttl {
+			font-family: var(--ff);
+			font-size: 1.25rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: .02em;
+			line-height: 1.1;
+			margin-bottom: .65rem
+		}
+
+		.pc-desc {
+			font-size: .8rem;
+			line-height: 1.76;
+			color: rgba(0, 0, 0, .62);
+			font-weight: 300;
+			flex: 1
+		}
+
+		.pc-stack {
+			display: flex;
+			flex-wrap: wrap;
+			gap: .3rem;
+			margin-top: .9rem
+		}
+
+		.ps {
+			font-family: var(--mono);
+			font-size: .52rem;
+			letter-spacing: .04em;
+			padding: .14rem .4rem;
+			border: 1px solid rgba(0, 0, 0, .25);
+			background: var(--bg);
+			color: rgba(0, 0, 0, .55)
+		}
+
+		.pc-links {
+			display: flex;
+			border-top: var(--border)
+		}
+
+		.pl {
+			flex: 1;
+			padding: .72rem .8rem;
+			font-family: var(--mono);
+			font-size: .58rem;
+			letter-spacing: .08em;
+			text-transform: uppercase;
+			text-decoration: none;
+			color: var(--black);
+			border-right: var(--border);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: .35rem;
+			transition: all .15s;
+			font-weight: 700
+		}
+
+		.pl:last-child {
+			border-right: none
+		}
+
+		.pl:hover {
+			background: var(--yellow)
+		}
+
+		/* featured */
+		.pc-lg {
+			grid-column: span 2
+		}
+
+		.pc-lg .pc-top {
+			flex-direction: row;
+			gap: 1.5rem;
+			align-items: flex-start
+		}
+
+		.pc-icon-b {
+			width: 64px;
+			height: 64px;
+			border: var(--border);
+			box-shadow: var(--sh);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.7rem;
+			background: var(--yellow);
+			flex-shrink: 0;
+			margin-top: .2rem
+		}
+
+		/* CTA */
+		.pc-cta {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 2.5rem 2rem;
+			text-align: center;
+			gap: 1.3rem;
+			min-height: 240px;
+			background: var(--black)
+		}
+
+		.pc-cta p {
+			font-family: var(--ff);
+			font-size: 2rem;
+			font-weight: 900;
+			color: rgba(255, 255, 255, .35);
+			text-transform: uppercase;
+			letter-spacing: .03em
+		}
+
+		.pc-cta p span {
+			color: var(--white)
+		}
+
+		/* CONTACT */
+		.ct-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr
+		}
+
+		.ct-l {
+			padding: 4rem;
+			border-right: var(--border)
+		}
+
+		.ct-big {
+			font-family: var(--ff);
+			font-size: clamp(2.8rem, 5vw, 5.5rem);
+			font-weight: 900;
+			line-height: .88;
+			letter-spacing: -.01em;
+			text-transform: uppercase;
+			margin-bottom: 2rem
+		}
+
+		.ct-big em {
+			font-style: italic;
+			color: var(--red)
+		}
+
+		.ct-sub {
+			font-size: .88rem;
+			line-height: 1.8;
+			color: rgba(0, 0, 0, .65);
+			font-weight: 300;
+			margin-bottom: 2.5rem
+		}
+
+		.clinks {
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+			border: var(--border);
+			box-shadow: var(--sh)
+		}
+
+		.cl {
+			display: flex;
+			align-items: center;
+			gap: 1.2rem;
+			padding: 1rem 1.2rem;
+			border-bottom: var(--border);
+			text-decoration: none;
+			color: var(--black);
+			background: var(--white);
+			transition: background .12s
+		}
+
+		.cl:last-child {
+			border-bottom: none
+		}
+
+		.cl:hover {
+			background: var(--yellow)
+		}
+
+		.cl-ico {
+			width: 32px;
+			height: 32px;
+			border: var(--border);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: .8rem;
+			flex-shrink: 0;
+			background: var(--black);
+			color: var(--yellow);
+			font-family: var(--mono);
+			font-weight: 700
+		}
+
+		.cl-info {
+			flex: 1
+		}
+
+		.cl-lbl {
+			font-family: var(--mono);
+			font-size: .52rem;
+			letter-spacing: .15em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .45);
+			display: block;
+			margin-bottom: .12rem
+		}
+
+		.cl-v {
+			font-size: .85rem;
+			font-weight: 600
+		}
+
+		.cl-arr {
+			font-family: var(--mono);
+			font-weight: 700;
+			transition: transform .15s;
+			font-size: .8rem
+		}
+
+		.cl:hover .cl-arr {
+			transform: translateX(4px)
+		}
+
+		.ct-r {
+			padding: 4rem;
+			background: var(--black)
+		}
+
+		.form-ttl {
+			font-family: var(--ff);
+			font-size: 2rem;
+			font-weight: 900;
+			text-transform: uppercase;
+			letter-spacing: .04em;
+			color: var(--yellow);
+			margin-bottom: .35rem
+		}
+
+		.form-sub {
+			font-family: var(--mono);
+			font-size: .58rem;
+			letter-spacing: .14em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, .4);
+			margin-bottom: 2rem
+		}
+
+		.fg {
+			margin-bottom: 1.2rem
+		}
+
+		.fg label {
+			font-family: var(--mono);
+			font-size: .56rem;
+			letter-spacing: .15em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, .4);
+			display: block;
+			margin-bottom: .45rem
+		}
+
+		.fg input,
+		.fg textarea {
+			width: 100%;
+			background: rgba(255, 255, 255, .06);
+			border: 1px solid rgba(255, 255, 255, .15);
+			color: var(--white);
+			font-family: var(--fb);
+			font-size: .88rem;
+			padding: .72rem .9rem;
+			outline: none;
+			transition: border-color .15s;
+			font-weight: 300
+		}
+
+		.fg input:focus,
+		.fg textarea:focus {
+			border-color: var(--yellow)
+		}
+
+		.fg textarea {
+			height: 105px;
+			resize: none
+		}
+
+		input::placeholder,
+		textarea::placeholder {
+			color: rgba(255, 255, 255, .2)
+		}
+
+		/* FOOTER */
+		footer {
+			background: var(--black);
+			color: var(--white);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1.6rem 4rem;
+			border-top: var(--border)
+		}
+
+		.f-l {
+			font-family: var(--mono);
+			font-size: .58rem;
+			letter-spacing: .08em;
+			color: rgba(255, 255, 255, .4)
+		}
+
+		.f-l strong {
+			color: var(--yellow)
+		}
+
+		.f-nav {
+			display: flex;
+			gap: 1.5rem
+		}
+
+		.f-nav a {
+			font-family: var(--mono);
+			font-size: .56rem;
+			letter-spacing: .1em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, .4);
+			text-decoration: none;
+			transition: color .15s
+		}
+
+		.f-nav a:hover {
+			color: var(--yellow)
+		}
+
+		.f-r {
+			font-family: var(--mono);
+			font-size: .54rem;
+			color: rgba(255, 255, 255, .2)
+		}
+
+		/* REVEAL */
+		.fi {
+			opacity: 0;
+			transform: translateY(16px);
+			transition: opacity .5s ease, transform .5s ease
+		}
+
+		.fi.v {
+			opacity: 1;
+			transform: none
+		}
+
+		.fi.d1 {
+			transition-delay: .08s
+		}
+
+		.fi.d2 {
+			transition-delay: .16s
+		}
+
+		.fi.d3 {
+			transition-delay: .24s
+		}
+
+		/* RESPONSIVE */
+		@media(max-width:1100px) {
+			#hero {
+				grid-template-columns: 1fr
+			}
+
+			.hr {
+				display: none
+			}
+
+			.pc-lg {
+				grid-column: span 3
+			}
+
+			.pc-lg .pc-top {
+				flex-direction: column
+			}
+
+			.pc-icon-b {
+				display: none
+			}
+
+			.role-cards {
+				grid-template-columns: 1fr 1fr
+			}
+		}
+
+		@media(max-width:820px) {
+			section.sec {
+				padding: 0
+			}
+
+			.about-bio {
+				grid-template-columns: 1fr
+			}
+
+			.ab-l {
+				border-right: none;
+				border-bottom: var(--border)
+			}
+
+			.role-cards {
+				grid-template-columns: 1fr 1fr
+			}
+
+			.rc {
+				border-bottom: var(--border)
+			}
+
+			.rc:nth-child(2n) {
+				border-right: none
+			}
+
+			.sk-grid {
+				grid-template-columns: 1fr
+			}
+
+			.sk-col {
+				border-right: none
+			}
+
+			.pg {
+				grid-template-columns: 1fr 1fr
+			}
+
+			.pc-lg {
+				grid-column: span 2
+			}
+
+			.ct-grid {
+				grid-template-columns: 1fr
+			}
+
+			.ct-l {
+				border-right: none
+			}
+
+			.n-links {
+				display: none
+			}
+
+			nav {
+				padding: 0
+			}
+
+			footer {
+				flex-direction: column;
+				gap: .8rem;
+				padding: 1.5rem 2rem;
+				text-align: center
+			}
+		}
+
+		@media(max-width:560px) {
+			.pg {
+				grid-template-columns: 1fr
+			}
+
+			.pc-lg {
+				grid-column: span 1
+			}
+
+			.pc:nth-child(3n) {
+				border-right: var(--border)
+			}
+
+			.pc {
+				border-right: none
+			}
+
+			.role-cards {
+				grid-template-columns: 1fr
+			}
+
+			.rc {
+				border-right: none
+			}
+
+			.hl {
+				padding: 4rem 1.5rem 3rem
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="cur"></div>
+
+	<nav>
+		<a href="index.html" class="n-logo">AP.</a>
+		<div class="n-links">
+			<a href="#about" class="on">About</a>
+			<a href="#skills">Skills</a>
+			<a href="#projects">Projects</a>
+			<a href="generic.html">Experience</a>
+			<a href="elements.html">Education</a>
+		</div>
+		<a href="mailto:aawaizpatel1@gmail.com" class="n-cta">Hire Me →</a>
+	</nav>
+
+	<!-- HERO -->
+	<section id="hero">
+		<div class="hl">
+			<div class="hl-bg">AI</div>
+			<div class="h-tag"><span class="h-tag-dot"></span><span>Available for Opportunities</span></div>
+			<h1 class="h-name">Aawaiz<br><em>Patel</em></h1>
+			<div class="h-sub">AI · Data Science · Analytics · Data Engineering</div>
+			<p class="h-bio"><strong>B.Tech AI & Data Science graduate</strong> from DBATU, Solapur. I build ML models,
+				ETL pipelines, and BI dashboards that convert raw data into <strong>actionable business
+					decisions</strong>. Hands-on with Python, SQL, Power BI, and end-to-end data engineering.</p>
+			<div class="h-btns">
+				<a href="#projects" class="btn btn-blk">View Projects →</a>
+				<a href="https://aawaizp.github.io/AawaizPortfolio.github.io/assets/resume/Aawaiz%20Patel%20-%209307034091(2).pdf"
+					target="_blank" class="btn btn-wht">↓ Resume</a>
 			</div>
 		</div>
+		<div class="hr">
+			<div class="hr-top">
+				<div class="hr-art">DE</div>
+				<div class="hic">
+					<div class="hic-l"><span class="hic-dot"></span>Current Status</div>
+					<div class="hic-v">ML Intern — InfoStack Software Development</div>
+				</div>
+				<div class="hic">
+					<div class="hic-l">🎓 Degree</div>
+					<div class="hic-v">B.Tech AI & Data Science · DBATU · 2021–2025</div>
+				</div>
+				<div class="hic">
+					<div class="hic-l">☁️ Certified</div>
+					<div class="hic-v">Oracle Cloud OCI · Deloitte · Infosys Springboard</div>
+				</div>
+				<div class="hic">
+					<div class="hic-l">📄 Research</div>
+					<div class="hic-v">Published — Fake Product Review Detection</div>
+				</div>
+				<div class="hic">
+					<div class="hic-l">📍 Location</div>
+					<div class="hic-v">Solapur, Maharashtra · Open to Relocation</div>
+				</div>
+			</div>
+			<div class="hr-stats">
+				<div class="hstat">
+					<div class="hstat-n">9+</div>
+					<div class="hstat-l">Projects</div>
+				</div>
+				<div class="hstat">
+					<div class="hstat-n">4</div>
+					<div class="hstat-l">Certs</div>
+				</div>
+				<div class="hstat">
+					<div class="hstat-n">1</div>
+					<div class="hstat-l">Publication</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+	<!-- MARQUEE -->
+	<div class="mq">
+		<div class="mq-inner">
+			<span class="mq-item">Python</span><span class="mq-sep">✦</span><span class="mq-item">SQL</span><span
+				class="mq-sep">✦</span><span class="mq-item">Power BI</span><span class="mq-sep">✦</span><span
+				class="mq-item">DAX</span><span class="mq-sep">✦</span><span class="mq-item">Machine
+				Learning</span><span class="mq-sep">✦</span><span class="mq-item">Data Engineering</span><span
+				class="mq-sep">✦</span><span class="mq-item">ETL Pipelines</span><span class="mq-sep">✦</span><span
+				class="mq-item">PostgreSQL</span><span class="mq-sep">✦</span><span class="mq-item">Tableau</span><span
+				class="mq-sep">✦</span><span class="mq-item">XGBoost</span><span class="mq-sep">✦</span><span
+				class="mq-item">NLP</span><span class="mq-sep">✦</span><span class="mq-item">Star Schema</span><span
+				class="mq-sep">✦</span><span class="mq-item">Flask</span><span class="mq-sep">✦</span><span
+				class="mq-item">GenAI</span><span class="mq-sep">✦</span>
+			<span class="mq-item">Python</span><span class="mq-sep">✦</span><span class="mq-item">SQL</span><span
+				class="mq-sep">✦</span><span class="mq-item">Power BI</span><span class="mq-sep">✦</span><span
+				class="mq-item">DAX</span><span class="mq-sep">✦</span><span class="mq-item">Machine
+				Learning</span><span class="mq-sep">✦</span><span class="mq-item">Data Engineering</span><span
+				class="mq-sep">✦</span><span class="mq-item">ETL Pipelines</span><span class="mq-sep">✦</span><span
+				class="mq-item">PostgreSQL</span><span class="mq-sep">✦</span><span class="mq-item">Tableau</span><span
+				class="mq-sep">✦</span><span class="mq-item">XGBoost</span><span class="mq-sep">✦</span><span
+				class="mq-item">NLP</span><span class="mq-sep">✦</span><span class="mq-item">Star Schema</span><span
+				class="mq-sep">✦</span><span class="mq-item">Flask</span><span class="mq-sep">✦</span><span
+				class="mq-item">GenAI</span><span class="mq-sep">✦</span>
+		</div>
+	</div>
+
+	<!-- ABOUT -->
+	<section class="sec fi" id="about">
+		<div class="sec-hdr">
+			<div class="sec-num">01</div>
+			<div class="sec-ttl">About Me</div>
+			<div class="sec-meta">Profile</div>
+		</div>
+		<div class="about-bio">
+			<div class="ab-l">
+				<h3>Who I Am</h3>
+				<p>I'm Aawaiz Patel — a B.Tech AI & Data Science graduate from DBATU (N.K. Orchid College, Solapur). I
+					specialise in turning raw, messy data into structured, decision-ready intelligence across the full
+					data lifecycle: Python ETL pipelines, ML models, data warehouses, and Power BI executive dashboards.
+				</p>
+				<p>During my ML internship at <strong>InfoStack Software</strong>, I built four deployed AI systems —
+					XGBoost fraud detector, NLP classifiers, LLM chatbot, and a transformer summarizer — within a
+					cross-functional engineering team.</p>
+				<p>I hold certifications from <strong>Oracle Cloud</strong>, <strong>Deloitte (Forage)</strong>, and
+					<strong>Infosys Springboard</strong>, and have a <strong>published research paper</strong> on fake
+					product review detection. I approach every project with a business-first mindset: what decision does
+					this data need to drive?</p>
+			</div>
+			<div class="ab-r">
+				<div class="a-row"><span class="a-row-l">Degree</span><span class="a-row-v">B.Tech AI & Data
+						Science</span></div>
+				<div class="a-row"><span class="a-row-l">University</span><span class="a-row-v">DBATU · N.K. Orchid
+						College</span></div>
+				<div class="a-row"><span class="a-row-l">Graduation</span><span class="a-row-v"><span>2025</span></span>
+				</div>
+				<div class="a-row"><span class="a-row-l">Experience</span><span class="a-row-v">ML Intern · InfoStack
+						Software</span></div>
+				<div class="a-row"><span class="a-row-l">Research</span><span class="a-row-v"><span>Published</span> ·
+						Fake Review Detection</span></div>
+				<div class="a-row"><span class="a-row-l">Target Roles</span><span class="a-row-v">DA · DE · AI/ML ·
+						Python/SQL Dev</span></div>
+				<div class="a-row"><span class="a-row-l">Open To</span><span class="a-row-v">Relocation & Remote
+						Work</span></div>
+			</div>
+		</div>
+		<div class="role-cards">
+			<div class="rc rc-ai">
+				<div class="rc-bar"></div>
+				<div class="rc-ico">🤖</div>
+				<div class="rc-tag">AI / ML Engineer</div>
+				<div class="rc-ttl">Artificial Intelligence</div>
+				<p class="rc-p">Classification, regression, NLP & computer vision. XGBoost fraud detectors, LLM chatbots
+					(LLaMA 3), cyberbullying classifiers, face-recognition systems, GenAI analytics. Scikit-learn,
+					HuggingFace, OpenCV.</p>
+			</div>
+			<div class="rc rc-ds">
+				<div class="rc-bar"></div>
+				<div class="rc-ico">🔬</div>
+				<div class="rc-tag">Data Scientist</div>
+				<div class="rc-ttl">Data Science</div>
+				<p class="rc-p">EDA, statistical modelling, hypothesis testing, and published ML research. Python
+					(Pandas, NumPy, Matplotlib, Seaborn). Demand forecasting with ensembles, price-elasticity modelling,
+					feature engineering.</p>
+			</div>
+			<div class="rc rc-da">
+				<div class="rc-bar"></div>
+				<div class="rc-ico">📊</div>
+				<div class="rc-tag">Data / BI Analyst</div>
+				<div class="rc-ttl">Data Analytics & BI</div>
+				<p class="rc-p">Power BI dashboards, DAX measures, KPI design, Power Query transformation, business
+					storytelling. Advanced SQL — CTEs, window functions, joins. Tableau public dashboards and Excel
+					reporting.</p>
+			</div>
+			<div class="rc rc-de">
+				<div class="rc-bar"></div>
+				<div class="rc-ico">⚙️</div>
+				<div class="rc-tag">Data Engineer</div>
+				<div class="rc-ttl">Data Engineering</div>
+				<p class="rc-p">End-to-end ETL pipelines in Python + PostgreSQL with Medallion Architecture
+					(Bronze→Silver→Gold). Data warehouse design — Star Schema, fact & dimension tables. SQLAlchemy,
+					transformation, Gold layer analytics.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- SKILLS -->
+	<section class="sec fi" id="skills">
+		<div class="sec-hdr">
+			<div class="sec-num">02</div>
+			<div class="sec-ttl">Skills & Tools</div>
+			<div class="sec-meta">Tech Stack</div>
+		</div>
+		<div class="sk-grid">
+			<div class="sk-col">
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">🐍</span><span class="sg-lbl">Python & Libraries</span></div>
+					<div class="chips">
+						<span class="chip hot">Python</span><span class="chip hot">Pandas</span><span
+							class="chip hot">NumPy</span>
+						<span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span
+							class="chip">Plotly</span>
+						<span class="chip">Scikit-learn</span><span class="chip">XGBoost</span><span
+							class="chip">OpenCV</span><span class="chip">HuggingFace</span>
+					</div>
+				</div>
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">🗄️</span><span class="sg-lbl">SQL & Databases</span></div>
+					<div class="chips">
+						<span class="chip hot">SQL</span><span class="chip hot">MySQL</span><span class="chip hot">SQL
+							Server</span>
+						<span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span
+							class="chip">SQLAlchemy</span>
+						<span class="chip">CTEs</span><span class="chip">Window Functions</span><span
+							class="chip">Joins</span>
+					</div>
+				</div>
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">📈</span><span class="sg-lbl">BI & Reporting</span></div>
+					<div class="chips">
+						<span class="chip red">Power BI</span><span class="chip red">DAX</span><span
+							class="chip red">Power Query</span>
+						<span class="chip red">Tableau</span><span class="chip">Excel</span>
+						<span class="chip">KPI Design</span><span class="chip">Dashboard Design</span><span
+							class="chip">Scenario Analysis</span>
+					</div>
+				</div>
+			</div>
+			<div class="sk-col">
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">⚙️</span><span class="sg-lbl">Data Engineering & ETL</span>
+					</div>
+					<div class="chips">
+						<span class="chip blu">ETL Pipelines</span><span class="chip blu">Medallion Architecture</span>
+						<span class="chip blu">Star Schema</span><span class="chip blu">Data Warehousing</span>
+						<span class="chip">Fact & Dim Tables</span><span class="chip">Data Modeling</span><span
+							class="chip">Data Transformation</span>
+					</div>
+				</div>
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">🤖</span><span class="sg-lbl">AI · ML · NLP · GenAI</span>
+					</div>
+					<div class="chips">
+						<span class="chip hot">Machine Learning</span><span class="chip hot">Classification</span>
+						<span class="chip hot">Feature Engineering</span><span class="chip">NLP & Text
+							Classification</span>
+						<span class="chip">LLMs (LLaMA 3, T5)</span><span class="chip">GenAI</span><span
+							class="chip">Agentic AI</span>
+						<span class="chip">Computer Vision</span><span class="chip">Model Evaluation</span>
+					</div>
+				</div>
+				<div class="sg">
+					<div class="sg-h"><span class="sg-ico">🛠️</span><span class="sg-lbl">Frameworks, Cloud &
+							Tools</span></div>
+					<div class="chips">
+						<span class="chip hot">Flask</span><span class="chip hot">Streamlit</span><span
+							class="chip">Django</span>
+						<span class="chip">Oracle Cloud OCI</span><span class="chip">Git / GitHub</span>
+						<span class="chip">Jupyter</span><span class="chip">Google Colab</span><span
+							class="chip">Supabase</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- PROJECTS -->
+	<section class="sec fi" id="projects">
+		<div class="sec-hdr">
+			<div class="sec-num">03</div>
+			<div class="sec-ttl">Projects & Builds</div>
+			<div class="sec-meta">09 Total</div>
+		</div>
+		<div class="pg">
+
+			<div class="pc pc-lg">
+				<div class="pc-inner">
+					<div class="pc-top">
+						<div class="pc-icon-b">🤖</div>
+						<div style="flex:1">
+							<div class="pc-meta"><span class="pc-tag">GenAI · BI Platform</span><span class="pc-live">🟢
+									LIVE</span><span class="pc-feat">⭐ FEATURED</span></div>
+							<div class="pc-ttl">BizInsight AI — Autonomous Business Analyzer</div>
+							<p class="pc-desc">GenAI + Agentic AI BI tool. Upload any CSV/Excel and ask questions in
+								plain English — returns dashboards, KPI trends, segmentation, and insights
+								automatically. Custom agentic planner maps user intent to tools. Deployed live on
+								Streamlit Cloud.</p>
+							<div class="pc-stack"><span class="ps">Python</span><span class="ps">Streamlit</span><span
+									class="ps">T5 LLM</span><span class="ps">HuggingFace</span><span
+									class="ps">Pandas</span><span class="ps">Agentic AI</span><span
+									class="ps">Plotly</span></div>
+						</div>
+					</div>
+					<div class="pc-links"><a href="https://github.com/Aawaizp/bizinsight-ai" target="_blank"
+							class="pl">GitHub ↗</a><a href="https://bizinsight-ai-kdbvmmr7c5mt8nfdch2z4e.streamlit.app/"
+							target="_blank" class="pl">Live Demo ↗</a></div>
+				</div>
+			</div>
+
+			<div class="pc">
+				<div class="pc-inner">
+					<div class="pc-top">
+						<div class="pc-meta"><span class="pc-tag">Power BI · SQL · ML</span><span class="pc-feat">📊
+								BI</span></div>
+						<div class="pc-ttl">Demand Pricing Optimizer</div>
+						<p class="pc-desc">Interactive Power BI dashboard analysing demand trends, pricing sensitivity,
+							and revenue impact. DAX measures for KPIs — optimal price, revenue variance, demand
+							elasticity. Scenario-based pricing for business decisions.</p>
+						<div class="pc-stack"><span class="ps">Power BI</span><span class="ps">DAX</span><span
+								class="ps">Power Query</span><span class="ps">SQL</span><span class="ps">XGBoost</span>
+						</div>
+					</div>
+					<div class="pc-links"><a href="https://github.com/Aawaizp/demand-pricing-optimizer" target="_blank"
+							class="pl">GitHub ↗</a></div>
+				</div>
+			</div>
+
+			<div class="pc">
+				<div class="pc-inner">
+					<div class="pc-top">
+						<div class="pc-meta"><span class="pc-tag">Computer Vision</span><span class="pc-feat">🏆
+								FLAGSHIP</span></div>
+						<div class="pc-ttl">UPASTHITI-AI — Smart Attendance</div>
+						<p class="pc-desc">Real-time face recognition attendance using YOLOv5 + OpenCV. Auto-registers
+							students, generates lecture Excel sheets, sends PDF reports, emails parents on absences —
+							fully automated end-to-end.</p>
+						<div class="pc-stack"><span class="ps">Python</span><span class="ps">OpenCV</span><span
+								class="ps">YOLOv5</span><span class="ps">SQLite</span><span class="ps">SMTP</span></div>
+					</div>
+					<div class="pc-links"><a href="https://github.com/Aawaizp/UPASTHITI-AI" target="_blank"
+							class="pl">GitHub ↗</a></div>
+				</div>
+			</div>
+
+			<div class="pc">
+				<div class="pc-inner">
+					<div class="pc-top">
+						<div class="pc-meta"><span class="pc-tag">Data Engineering</span><span class="pc-feat">🏗️
+								ENTERPRISE</span></div>
+						<div class="pc-ttl">PostgreSQL Data Warehouse</div>
+						<p class="pc-desc">End-to-end data warehouse on PostgreSQL — Bronze→Silver→Gold Medallion
+							Architecture. Star Schema with Customer, Product dimension tables and a Sales fact table.
+							Interview-ready DE project.</p>
+						<div class="pc-stack"><span class="ps">PostgreSQL</span><span class="ps">Star Schema</span><span
+								class="ps">CTEs</span><span class="ps">Medallion Arch</span></div>
+					</div>
+					<div class="pc-links"><a href="https://github.com/Aawaizp/Data-Warehouse-" target="_blank"
+							class="pl">GitHub ↗</a></div>
+				</div>
+			</div>
+
+			<div class="pc">
+				<div class="pc-inner">
+					<div class="pc-top">
+						<div class="pc-meta"><span class="pc-tag">ETL Pipeline</span></div>
+						<div class="pc-ttl">Python ETL Medallion Pipeline</div>
+						<p class="pc-desc">Production ETL pipeline processing retail Superstore data through
+							Bronze→Silver→Gold via Python, Pandas & PostgreSQL. Ingestion, type casting, loss-flag KPIs,
+							and regional aggregations.</p>
+						<div class="pc-stack"><span class="ps">Python</span><span class="ps">Pandas</span><span
+								class="ps">PostgreSQL</span><span class="ps">SQLAlchemy</span></div>
+					</div>
+					<div class="pc-links"><a href="https://github.com/Aawaizp/python-etl-medallion" target="_blank"
+							class="pl">GitHub ↗</a></div>
+				</div>
+			</div>
+
+			<div class="pc">
+				<div class="pc-inner">
+					<div class="pc-top">
+						<div class="pc-meta"><span class="pc-tag">NLP · Research</span><span class="pc-live">📄
+								PUBLISHED</span></div>
+						<div class="pc-ttl">Fake Product Review Detection</div>
+						<p class="pc-desc">Published ML research. System using Logistic Regression + SVM to detect fake
+							product reviews. NLP preprocessing, TF-IDF vectorization, and thorough model evaluation at
+							research-grade accuracy.</p>
+						<div class="pc-stack"><span class="ps">Python</span><span class="ps">NLP</span><span
+								class="ps">TF-IDF</span><span class="ps">SVM</span><span class="ps">Logistic
+								Regression</span></div>
+					</div>
+					<div class="pc-links"><a href="generic.html" class="pl">Details →</a></div>
+				</div>
+			</div>
+
+			<div class="pc">
+				<div class="pc-inner">
+					<div class="pc-top">
+						<div class="pc-meta"><span class="pc-tag">Data Engineering</span></div>
+						<div class="pc-ttl">RetailPulse360</div>
+						<p class="pc-desc">Data engineering project delivering pulse-level retail analytics. Multi-stage
+							ingestion, transformation, and reporting layer combining Python pipelines with structured
+							analytics outputs.</p>
+						<div class="pc-stack"><span class="ps">Python</span><span class="ps">Data Pipelines</span><span
+								class="ps">Analytics</span></div>
+					</div>
+					<div class="pc-links"><a href="https://github.com/Aawaizp/RetailPulse360" target="_blank"
+							class="pl">GitHub ↗</a></div>
+				</div>
+			</div>
+
+			<div class="pc">
+				<div class="pc-inner">
+					<div class="pc-top">
+						<div class="pc-meta"><span class="pc-tag">SQL · Analytics</span></div>
+						<div class="pc-ttl">COVID-19 SQL Exploration</div>
+						<p class="pc-desc">Advanced SQL analytics on global COVID-19 dataset — CTEs, window functions,
+							and joins to analyse infection rates, death ratios, vaccination rollouts, and cross-country
+							comparisons in SQL Server.</p>
+						<div class="pc-stack"><span class="ps">SQL Server</span><span class="ps">CTEs</span><span
+								class="ps">Window Fns</span><span class="ps">Joins</span></div>
+					</div>
+					<div class="pc-links"><a
+							href="https://github.com/Aawaizp/PortfolioProjects/blob/main/project_SQLQuery1.sql"
+							target="_blank" class="pl">View SQL ↗</a></div>
+				</div>
+			</div>
+
+			<div class="pc pc-cta">
+				<p><span>All work</span> on GitHub</p>
+				<a href="https://github.com/Aawaizp" target="_blank" class="btn btn-yel">View All Repos →</a>
+			</div>
+
+		</div>
+	</section>
+
+	<!-- CONTACT -->
+	<section class="sec fi" id="contact">
+		<div class="sec-hdr">
+			<div class="sec-num">04</div>
+			<div class="sec-ttl">Get In Touch</div>
+			<div class="sec-meta">Contact</div>
+		</div>
+		<div class="ct-grid">
+			<div class="ct-l">
+				<div class="ct-big">Open to<br>new <em>roles.</em></div>
+				<p class="ct-sub">Actively seeking Data Analyst, Data Engineer, AI/ML, or Python/SQL Developer roles.
+					Also open to freelance analytics projects. I respond within 24 hours.</p>
+				<div class="clinks">
+					<a href="mailto:aawaizpatel1@gmail.com" class="cl">
+						<div class="cl-ico">✉</div>
+						<div class="cl-info"><span class="cl-lbl">Email</span><span
+								class="cl-v">aawaizpatel1@gmail.com</span></div><span class="cl-arr">→</span>
+					</a>
+					<a href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/" target="_blank" class="cl">
+						<div class="cl-ico">in</div>
+						<div class="cl-info"><span class="cl-lbl">LinkedIn</span><span
+								class="cl-v">linkedin.com/in/aawaiz-patel</span></div><span class="cl-arr">→</span>
+					</a>
+					<a href="https://github.com/Aawaizp" target="_blank" class="cl">
+						<div class="cl-ico">⌥</div>
+						<div class="cl-info"><span class="cl-lbl">GitHub</span><span
+								class="cl-v">github.com/Aawaizp</span></div><span class="cl-arr">→</span>
+					</a>
+					<a href="tel:+919307034091" class="cl">
+						<div class="cl-ico">☏</div>
+						<div class="cl-info"><span class="cl-lbl">Phone</span><span class="cl-v">(+91)
+								930-703-4091</span></div><span class="cl-arr">→</span>
+					</a>
+				</div>
+			</div>
+			<div class="ct-r">
+				<div class="form-ttl">Send a Message</div>
+				<div class="form-sub">Quick response guaranteed</div>
+				<div class="fg"><label>Your Name</label><input type="text" placeholder="Jane Smith" /></div>
+				<div class="fg"><label>Email</label><input type="email" placeholder="jane@company.com" /></div>
+				<div class="fg"><label>Message</label><textarea
+						placeholder="Hi Aawaiz, I'd like to discuss a Data role..."></textarea></div>
+				<button class="btn btn-yel" style="cursor:pointer;border:var(--border)">Send Message →</button>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="f-l">© 2025 <strong>Aawaiz Patel</strong> · Solapur, India</div>
+		<div class="f-nav"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a
+				href="generic.html">Experience</a><a href="elements.html">Education</a><a
+				href="https://github.com/Aawaizp" target="_blank">GitHub</a><a
+				href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/" target="_blank">LinkedIn</a></div>
+		<div class="f-r">AI · DA · DE · Python/SQL Dev</div>
+	</footer>
+
+	<script>
+		const cur = document.getElementById('cur');
+		let mx = 0, my = 0, ox = 0, oy = 0;
+		document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left = mx + 'px'; cur.style.top = my + 'px' });
+		document.querySelectorAll('a,button,.chip').forEach(el => { el.addEventListener('mouseenter', () => { cur.style.width = '28px'; cur.style.height = '28px'; cur.style.borderRadius = '4px' }); el.addEventListener('mouseleave', () => { cur.style.width = '14px'; cur.style.height = '14px'; cur.style.borderRadius = '50%' }) });
+		const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v') }), { threshold: .06 });
+		document.querySelectorAll('.fi').forEach(el => io.observe(el));
+		document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth' }) }));
+	</script>
+</body>
+
 </html>
-
