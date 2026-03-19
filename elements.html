@@ -6,21 +6,20 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>Education & Skills — Aawaiz Patel</title>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
 		rel="stylesheet" />
 	<style>
 		:root {
-			--bg: #F0EDE6;
-			--black: #0A0A0A;
-			--white: #FFFFFF;
-			--yellow: #FFE01B;
-			--red: #FF2800;
-			--blue: #0057FF;
-			--border: 3px solid var(--black);
-			--sh: 5px 5px 0 var(--black);
-			--sh-lg: 8px 8px 0 var(--black);
-			--ff: 'Barlow Condensed', sans-serif;
-			--fb: 'Barlow', sans-serif;
+			--bg: #EDEAE2;
+			--blk: #111010;
+			--wht: #FFFFFF;
+			--yel: #F5D800;
+			--red: #E8230A;
+			--blu: #1A4FFF;
+			--bd: 2.5px solid var(--blk);
+			--sh: 4px 4px 0 var(--blk);
+			--sh-h: 7px 7px 0 var(--blk);
+			--ff: 'Familjen Grotesk', sans-serif;
 			--mono: 'Space Mono', monospace
 		}
 
@@ -33,53 +32,85 @@
 		}
 
 		html {
-			scroll-behavior: smooth
+			scroll-behavior: smooth;
+			-webkit-text-size-adjust: 100%
 		}
 
 		body {
 			background: var(--bg);
-			color: var(--black);
-			font-family: var(--fb);
-			overflow-x: hidden
+			color: var(--blk);
+			font-family: var(--ff);
+			overflow-x: hidden;
+			min-width: 320px
 		}
 
 		#cur {
-			width: 14px;
-			height: 14px;
-			background: var(--yellow);
-			border: 2px solid var(--black);
+			width: 12px;
+			height: 12px;
+			background: var(--yel);
+			border: 2px solid var(--blk);
 			border-radius: 50%;
 			position: fixed;
 			pointer-events: none;
 			z-index: 9999;
 			transform: translate(-50%, -50%);
-			transition: width .15s, height .15s, border-radius .15s;
-			mix-blend-mode: multiply
+			transition: width .12s, height .12s, border-radius .12s;
+			mix-blend-mode: multiply;
+			display: none
 		}
 
+		@media(hover:hover) {
+			#cur {
+				display: block
+			}
+		}
+
+		/* NAV */
 		nav {
 			position: fixed;
 			top: 0;
 			left: 0;
 			right: 0;
-			z-index: 500;
-			height: 56px;
-			background: var(--black);
+			z-index: 900;
+			height: 54px;
+			background: var(--blk);
 			display: flex;
-			align-items: stretch
+			align-items: stretch;
+			border-bottom: var(--bd)
 		}
 
-		.n-logo {
-			font-family: var(--ff);
-			font-size: 1.5rem;
-			font-weight: 900;
-			letter-spacing: .04em;
-			color: var(--yellow);
-			text-decoration: none;
-			padding: 0 1.5rem;
+		.n-brand {
 			display: flex;
 			align-items: center;
-			border-right: 2px solid rgba(255, 255, 255, .1)
+			padding: 0 1.2rem;
+			border-right: 1px solid rgba(255, 255, 255, .1);
+			text-decoration: none;
+			gap: .5rem;
+			flex-shrink: 0
+		}
+
+		.n-brand-mark {
+			width: 34px;
+			height: 34px;
+			background: var(--yel);
+			border: var(--bd);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: var(--mono);
+			font-size: .7rem;
+			font-weight: 700;
+			color: var(--blk);
+			flex-shrink: 0
+		}
+
+		.n-brand-name {
+			font-family: var(--mono);
+			font-size: .62rem;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+			color: var(--wht);
+			font-weight: 700
 		}
 
 		.n-links {
@@ -89,365 +120,415 @@
 
 		.n-links a {
 			font-family: var(--mono);
-			font-size: .6rem;
-			letter-spacing: .12em;
+			font-size: .58rem;
+			letter-spacing: .1em;
 			text-transform: uppercase;
 			color: rgba(255, 255, 255, .5);
 			text-decoration: none;
-			padding: 0 1.1rem;
+			padding: 0 1rem;
 			display: flex;
 			align-items: center;
-			border-left: 1px solid rgba(255, 255, 255, .08);
-			transition: all .15s
+			border-left: 1px solid rgba(255, 255, 255, .07);
+			transition: all .12s;
+			white-space: nowrap
 		}
 
 		.n-links a:hover,
 		.n-links a.on {
-			color: var(--black);
-			background: var(--yellow)
+			color: var(--blk);
+			background: var(--yel)
 		}
 
 		.n-cta {
 			font-family: var(--mono);
-			font-size: .6rem;
-			letter-spacing: .12em;
+			font-size: .58rem;
+			letter-spacing: .1em;
 			text-transform: uppercase;
-			color: var(--black);
-			background: var(--yellow);
+			color: var(--blk);
+			background: var(--yel);
 			text-decoration: none;
-			padding: 0 1.4rem;
+			padding: 0 1.1rem;
 			display: flex;
 			align-items: center;
-			border-left: var(--border);
+			border-left: var(--bd);
 			font-weight: 700;
-			transition: all .15s
+			white-space: nowrap;
+			transition: all .12s;
+			flex-shrink: 0
 		}
 
 		.n-cta:hover {
 			background: var(--red);
-			color: var(--white)
+			color: var(--wht)
 		}
 
+		.n-ham {
+			display: none;
+			flex-direction: column;
+			justify-content: center;
+			gap: 4px;
+			padding: 0 1rem;
+			cursor: pointer;
+			border: none;
+			background: none;
+			margin-left: auto
+		}
+
+		.n-ham span {
+			width: 20px;
+			height: 2px;
+			background: var(--wht);
+			display: block
+		}
+
+		.n-mob {
+			display: none;
+			position: fixed;
+			top: 54px;
+			left: 0;
+			right: 0;
+			background: var(--blk);
+			border-bottom: var(--bd);
+			z-index: 899;
+			flex-direction: column
+		}
+
+		.n-mob a {
+			font-family: var(--mono);
+			font-size: .7rem;
+			letter-spacing: .1em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, .7);
+			text-decoration: none;
+			padding: 1rem 1.5rem;
+			border-bottom: 1px solid rgba(255, 255, 255, .07);
+			transition: all .12s
+		}
+
+		.n-mob a:hover,
+		.n-mob a.on {
+			color: var(--blk);
+			background: var(--yel)
+		}
+
+		.n-mob.open {
+			display: flex
+		}
+
+		/* BTN */
 		.btn {
 			font-family: var(--mono);
 			font-size: .62rem;
 			letter-spacing: .1em;
 			text-transform: uppercase;
-			padding: .75rem 1.4rem;
-			border: var(--border);
+			padding: .7rem 1.3rem;
+			border: var(--bd);
 			cursor: pointer;
 			text-decoration: none;
 			display: inline-flex;
 			align-items: center;
-			gap: .5rem;
+			gap: .45rem;
 			font-weight: 700;
-			transition: transform .12s, box-shadow .12s
+			transition: transform .12s, box-shadow .12s;
+			-webkit-tap-highlight-color: transparent
 		}
 
 		.btn:hover {
-			transform: translate(-3px, -3px)
+			transform: translate(-3px, -3px);
+			box-shadow: var(--sh-h)
 		}
 
 		.btn:active {
-			transform: translate(0, 0);
+			transform: none;
 			box-shadow: none
 		}
 
 		.btn-blk {
-			background: var(--black);
-			color: var(--yellow);
+			background: var(--blk);
+			color: var(--yel);
 			box-shadow: var(--sh)
-		}
-
-		.btn-blk:hover {
-			box-shadow: var(--sh-lg)
 		}
 
 		.btn-yel {
-			background: var(--yellow);
-			color: var(--black);
+			background: var(--yel);
+			color: var(--blk);
 			box-shadow: var(--sh)
-		}
-
-		.btn-yel:hover {
-			box-shadow: var(--sh-lg)
 		}
 
 		.btn-wht {
-			background: var(--white);
-			color: var(--black);
+			background: var(--wht);
+			color: var(--blk);
 			box-shadow: var(--sh)
 		}
 
-		.btn-wht:hover {
-			box-shadow: var(--sh-lg)
-		}
-
-		/* PAGE HEADER — yellow bg, distinct from generic.html */
+		/* PAGE HEADER — yellow bg to differentiate from generic.html black */
 		.ph {
-			margin-top: 56px;
-			background: var(--yellow);
-			border-bottom: var(--border);
+			margin-top: 54px;
+			background: var(--yel);
+			border-bottom: var(--bd);
 			display: grid;
 			grid-template-columns: 1fr 1fr
 		}
 
 		.ph-l {
-			padding: 4rem;
-			border-right: var(--border)
+			padding: 3.5rem 3rem 3rem;
+			border-right: var(--bd)
 		}
 
-		.ph-eyebrow {
+		.ph-ew {
 			font-family: var(--mono);
-			font-size: .6rem;
+			font-size: .58rem;
 			letter-spacing: .2em;
 			text-transform: uppercase;
-			color: rgba(0, 0, 0, .5);
-			margin-bottom: .8rem
+			color: rgba(0, 0, 0, .45);
+			margin-bottom: .7rem;
+			display: flex;
+			align-items: center;
+			gap: .6rem
 		}
 
-		.ph-title {
-			font-family: var(--ff);
-			font-size: clamp(3.5rem, 6vw, 7rem);
-			font-weight: 900;
+		.ph-ew::before {
+			content: '';
+			width: 16px;
+			height: 2px;
+			background: var(--blk)
+		}
+
+		.ph-ttl {
+			font-size: clamp(3rem, 7vw, 6rem);
+			font-weight: 700;
 			line-height: .88;
-			letter-spacing: -.01em;
+			letter-spacing: -.03em;
 			text-transform: uppercase;
-			color: var(--black)
+			color: var(--blk);
+			font-style: italic
 		}
 
-		.ph-title em {
-			font-style: italic;
+		.ph-ttl em {
+			font-style: normal;
 			color: var(--red)
 		}
 
 		.ph-sub {
 			font-family: var(--mono);
-			font-size: .58rem;
-			letter-spacing: .15em;
+			font-size: .55rem;
+			letter-spacing: .14em;
 			text-transform: uppercase;
-			color: rgba(0, 0, 0, .5);
-			margin-top: 1rem
+			color: rgba(0, 0, 0, .45);
+			margin-top: .9rem
 		}
 
 		.ph-r {
-			padding: 3.5rem;
+			padding: 3rem;
 			display: flex;
 			align-items: flex-end;
-			gap: 2.5rem;
+			gap: 2rem;
 			flex-wrap: wrap
 		}
 
 		.ph-stat {
 			display: flex;
 			flex-direction: column;
-			gap: .3rem
+			gap: .25rem
 		}
 
 		.ph-stat-n {
-			font-family: var(--ff);
-			font-size: 3.5rem;
-			font-weight: 900;
-			color: var(--black);
-			line-height: 1;
-			font-style: italic
+			font-family: var(--mono);
+			font-size: 3rem;
+			font-weight: 700;
+			font-style: italic;
+			color: var(--blk);
+			line-height: 1
 		}
 
 		.ph-stat-l {
 			font-family: var(--mono);
-			font-size: .56rem;
-			letter-spacing: .15em;
+			font-size: .52rem;
+			letter-spacing: .14em;
 			text-transform: uppercase;
-			color: rgba(0, 0, 0, .5)
+			color: rgba(0, 0, 0, .45)
 		}
 
-		.ph-divider {
-			width: 3px;
-			height: 60px;
+		.ph-div {
+			width: 2.5px;
+			height: 50px;
 			background: rgba(0, 0, 0, .2);
 			align-self: center
 		}
 
 		/* SECTION HEADERS */
-		.sh-sm {
+		.sh {
 			display: flex;
 			align-items: stretch;
-			border-bottom: var(--border);
-			border-top: var(--border)
+			border-bottom: var(--bd);
+			border-top: var(--bd)
 		}
 
-		.sh-sm h2 {
-			font-family: var(--ff);
-			font-size: 1.6rem;
-			font-weight: 800;
-			text-transform: uppercase;
-			letter-spacing: .04em;
-			padding: .7rem 1.5rem;
-			flex: 1
-		}
-
-		.sh-sm span {
+		.sh-num {
 			font-family: var(--mono);
-			font-size: .56rem;
-			letter-spacing: .15em;
+			font-size: 2.8rem;
+			font-weight: 700;
+			font-style: italic;
+			padding: .35rem 1rem;
+			background: var(--blk);
+			color: var(--yel);
+			border-right: var(--bd);
+			display: flex;
+			align-items: center;
+			flex-shrink: 0;
+			line-height: 1
+		}
+
+		.sh-ttl {
+			font-family: var(--ff);
+			font-size: clamp(1.3rem, 2.5vw, 2rem);
+			font-weight: 700;
+			letter-spacing: -.02em;
+			padding: .5rem 1.3rem;
+			display: flex;
+			align-items: center;
+			flex: 1;
+			text-transform: uppercase
+		}
+
+		.sh-meta {
+			font-family: var(--mono);
+			font-size: .54rem;
+			letter-spacing: .14em;
 			text-transform: uppercase;
-			color: rgba(0, 0, 0, .45);
+			color: rgba(0, 0, 0, .38);
 			padding: 0 1.2rem;
 			display: flex;
 			align-items: center;
-			border-left: var(--border)
+			flex-shrink: 0;
+			border-left: var(--bd);
+			white-space: nowrap
 		}
 
-		.sh-blk {
-			background: var(--black)
-		}
-
-		.sh-blk h2 {
-			color: var(--yellow)
-		}
-
-		.sh-blk span {
-			color: rgba(255, 255, 255, .35);
-			border-left-color: rgba(255, 255, 255, .1)
-		}
-
-		/* EDUCATION CARDS */
+		/* EDUCATION */
 		.edu-cards {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			border-bottom: var(--border)
+			border-bottom: var(--bd)
 		}
 
-		.edu-card {
-			padding: 2.5rem;
-			border-right: var(--border);
+		.ec {
+			padding: 2.2rem;
+			border-right: var(--bd);
 			display: flex;
 			flex-direction: column;
-			gap: 1rem;
+			gap: .9rem;
 			transition: background .12s
 		}
 
-		.edu-card:last-child {
+		.ec:last-child {
 			border-right: none
 		}
 
-		.edu-card:hover,
-		.edu-card.featured {
-			background: var(--white)
+		.ec:hover {
+			background: var(--wht)
 		}
 
-		.edu-card.featured {
-			background: var(--black)
+		.ec.feat {
+			background: var(--blk)
 		}
 
-		.edu-year {
-			font-family: var(--ff);
-			font-size: 3.5rem;
-			font-weight: 900;
+		.ec-yr {
+			font-family: var(--mono);
+			font-size: 3rem;
+			font-weight: 700;
 			font-style: italic;
 			line-height: 1
 		}
 
-		.edu-card.featured .edu-year {
-			color: var(--yellow)
+		.ec.feat .ec-yr {
+			color: var(--yel)
 		}
 
-		.edu-card:not(.featured) .edu-year {
+		.ec:not(.feat) .ec-yr {
 			color: var(--red)
 		}
 
-		.edu-degree {
-			font-family: var(--ff);
-			font-size: 1.15rem;
-			font-weight: 800;
+		.ec-deg {
+			font-size: 1.05rem;
+			font-weight: 700;
 			text-transform: uppercase;
-			letter-spacing: .03em;
+			letter-spacing: -.01em;
 			line-height: 1.1
 		}
 
-		.edu-card.featured .edu-degree {
-			color: var(--white)
+		.ec.feat .ec-deg {
+			color: var(--wht)
 		}
 
-		.edu-inst {
-			font-family: var(--mono);
-			font-size: .6rem;
-			letter-spacing: .12em;
-			text-transform: uppercase;
-			color: rgba(0, 0, 0, .5)
-		}
-
-		.edu-card.featured .edu-inst {
-			color: rgba(255, 255, 255, .45)
-		}
-
-		.edu-univ {
+		.ec-inst {
 			font-family: var(--mono);
 			font-size: .56rem;
-			color: rgba(0, 0, 0, .35)
+			letter-spacing: .1em;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, .45)
 		}
 
-		.edu-card.featured .edu-univ {
-			color: rgba(255, 255, 255, .3)
+		.ec.feat .ec-inst {
+			color: rgba(255, 255, 255, .4)
 		}
 
-		.edu-score {
+		.ec-score {
 			display: inline-flex;
 			align-items: center;
-			gap: .5rem;
+			gap: .4rem;
 			font-family: var(--mono);
-			font-size: .68rem;
-			letter-spacing: .08em;
-			padding: .3rem .75rem;
-			border: var(--border);
-			background: var(--yellow);
-			box-shadow: 3px 3px 0 var(--black);
+			font-size: .65rem;
+			letter-spacing: .06em;
+			padding: .28rem .7rem;
+			border: var(--bd);
+			background: var(--yel);
+			box-shadow: var(--sh);
 			width: fit-content;
 			font-weight: 700
 		}
 
-		.edu-desc {
-			font-size: .83rem;
+		.ec-desc {
+			font-size: .8rem;
 			line-height: 1.75;
-			color: rgba(0, 0, 0, .6);
-			font-weight: 300
+			color: rgba(0, 0, 0, .55)
 		}
 
-		.edu-card.featured .edu-desc {
-			color: rgba(255, 255, 255, .6)
+		.ec.feat .ec-desc {
+			color: rgba(255, 255, 255, .55)
 		}
 
-		.edu-courses {
+		.ec-courses {
 			display: flex;
 			flex-wrap: wrap;
-			gap: .35rem
+			gap: .3rem
 		}
 
-		.edu-c {
+		.ec-c {
 			font-family: var(--mono);
-			font-size: .56rem;
-			letter-spacing: .06em;
+			font-size: .53rem;
+			letter-spacing: .04em;
 			text-transform: uppercase;
-			padding: .18rem .45rem;
-			border: 1px solid rgba(0, 0, 0, .2);
+			padding: .16rem .42rem;
+			border: 1px solid rgba(0, 0, 0, .18);
 			background: var(--bg)
 		}
 
-		.edu-card.featured .edu-c {
-			border-color: rgba(255, 255, 255, .15);
-			background: rgba(255, 255, 255, .08);
-			color: rgba(255, 255, 255, .65)
+		.ec.feat .ec-c {
+			border-color: rgba(255, 255, 255, .14);
+			background: rgba(255, 255, 255, .07);
+			color: rgba(255, 255, 255, .6)
 		}
 
 		/* SKILLS */
 		.sk-outer {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			border-bottom: var(--border)
+			border-bottom: var(--bd)
 		}
 
 		.sk-col {
-			border-right: var(--border)
+			border-right: var(--bd)
 		}
 
 		.sk-col:last-child {
@@ -455,8 +536,8 @@
 		}
 
 		.sg {
-			padding: 1.8rem 2rem;
-			border-bottom: var(--border)
+			padding: 1.6rem 1.8rem;
+			border-bottom: var(--bd)
 		}
 
 		.sg:last-child {
@@ -466,123 +547,126 @@
 		.sg-h {
 			display: flex;
 			align-items: center;
-			gap: .6rem;
-			margin-bottom: 1.1rem;
-			padding-bottom: .8rem;
-			border-bottom: 2px solid var(--black)
-		}
-
-		.sg-ico {
-			font-size: 1rem
+			gap: .5rem;
+			margin-bottom: .9rem;
+			padding-bottom: .7rem;
+			border-bottom: 2px solid var(--blk)
 		}
 
 		.sg-lbl {
-			font-family: var(--ff);
-			font-size: 1.1rem;
-			font-weight: 800;
+			font-size: .95rem;
+			font-weight: 700;
 			text-transform: uppercase;
-			letter-spacing: .04em
+			letter-spacing: -.01em
 		}
 
 		.chips {
 			display: flex;
 			flex-wrap: wrap;
-			gap: .4rem
+			gap: .32rem
 		}
 
 		.chip {
 			font-family: var(--mono);
-			font-size: .58rem;
-			letter-spacing: .04em;
-			padding: .28rem .65rem;
-			border: var(--border);
-			background: var(--white);
-			box-shadow: 2px 2px 0 var(--black);
+			font-size: .56rem;
+			letter-spacing: .03em;
+			padding: .25rem .6rem;
+			border: var(--bd);
+			background: var(--wht);
+			box-shadow: 2px 2px 0 var(--blk);
 			cursor: default;
-			transition: all .12s
+			transition: all .1s;
+			-webkit-tap-highlight-color: transparent
 		}
 
 		.chip:hover {
-			background: var(--yellow);
+			background: var(--yel);
 			transform: translate(-2px, -2px);
-			box-shadow: 4px 4px 0 var(--black)
+			box-shadow: 4px 4px 0 var(--blk)
 		}
 
-		.chip.hot {
-			background: var(--black);
-			color: var(--yellow)
+		.chip.h {
+			background: var(--blk);
+			color: var(--yel)
 		}
 
-		.chip.hot:hover {
-			background: rgba(0, 0, 0, .8)
+		.chip.h:hover {
+			background: #222
 		}
 
-		.chip.blu {
-			background: var(--blue);
-			color: var(--white)
+		.chip.b {
+			background: var(--blu);
+			color: var(--wht)
 		}
 
-		.chip.red {
+		.chip.b:hover {
+			background: #0040cc
+		}
+
+		.chip.r {
 			background: var(--red);
-			color: var(--white)
+			color: var(--wht)
+		}
+
+		.chip.r:hover {
+			background: #c01d08
 		}
 
 		/* RESUME CTA */
-		.resume-cta {
+		.rc {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			gap: 3rem;
-			padding: 4rem;
-			background: var(--black);
-			border-bottom: var(--border)
+			gap: 2.5rem;
+			padding: 3.5rem;
+			background: var(--blk);
+			border-bottom: var(--bd);
+			flex-wrap: wrap
 		}
 
-		.rc-txt {}
-
 		.rc-big {
-			font-family: var(--ff);
-			font-size: clamp(3rem, 5vw, 5.5rem);
-			font-weight: 900;
-			line-height: .88;
+			font-size: clamp(2.5rem, 5vw, 5rem);
+			font-weight: 700;
+			line-height: .9;
 			text-transform: uppercase;
-			color: var(--white);
-			letter-spacing: -.01em
+			color: var(--wht);
+			letter-spacing: -.03em;
+			font-style: italic
 		}
 
 		.rc-big em {
-			font-style: italic;
-			color: var(--yellow)
+			font-style: normal;
+			color: var(--yel)
 		}
 
 		.rc-sub {
 			font-family: var(--mono);
-			font-size: .6rem;
-			letter-spacing: .14em;
+			font-size: .56rem;
+			letter-spacing: .12em;
 			text-transform: uppercase;
-			color: rgba(255, 255, 255, .4);
-			margin-top: .9rem
+			color: rgba(255, 255, 255, .35);
+			margin-top: .8rem
 		}
 
 		.rc-actions {
 			display: flex;
 			flex-direction: column;
-			gap: .8rem;
+			gap: .7rem;
 			flex-shrink: 0
 		}
 
 		/* PAGE NAV */
 		.pnav {
 			display: flex;
-			border-top: var(--border)
+			border-top: var(--bd)
 		}
 
 		.pn {
 			flex: 1;
-			padding: 1.4rem 2rem;
-			border-right: var(--border);
+			padding: 1.3rem 1.8rem;
+			border-right: var(--bd);
 			text-decoration: none;
-			color: var(--black);
+			color: var(--blk);
 			transition: background .12s;
 			display: flex;
 			flex-direction: column;
@@ -591,73 +675,74 @@
 
 		.pn:last-child {
 			border-right: none;
-			text-align: right
+			align-items: flex-end
 		}
 
 		.pn:hover {
-			background: var(--yellow)
+			background: var(--yel)
 		}
 
 		.pn-dir {
 			font-family: var(--mono);
-			font-size: .56rem;
-			letter-spacing: .15em;
+			font-size: .53rem;
+			letter-spacing: .14em;
 			text-transform: uppercase;
-			color: rgba(0, 0, 0, .4)
+			color: rgba(0, 0, 0, .38)
 		}
 
 		.pn-ttl {
-			font-family: var(--ff);
-			font-size: 1.4rem;
-			font-weight: 800;
+			font-size: 1.2rem;
+			font-weight: 700;
 			text-transform: uppercase;
-			letter-spacing: .03em
+			letter-spacing: -.01em
 		}
 
 		footer {
-			background: var(--black);
-			color: var(--white);
+			background: var(--blk);
+			border-top: var(--bd);
+			padding: 1.4rem 2.5rem;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			padding: 1.6rem 4rem;
-			border-top: var(--border)
+			flex-wrap: wrap;
+			gap: .8rem
 		}
 
 		.f-l {
 			font-family: var(--mono);
-			font-size: .58rem;
+			font-size: .56rem;
 			letter-spacing: .08em;
-			color: rgba(255, 255, 255, .4)
+			color: rgba(255, 255, 255, .35)
 		}
 
 		.f-l strong {
-			color: var(--yellow)
+			color: var(--yel)
 		}
 
 		.f-nav {
 			display: flex;
-			gap: 1.5rem
+			gap: 1.2rem;
+			flex-wrap: wrap
 		}
 
 		.f-nav a {
 			font-family: var(--mono);
-			font-size: .56rem;
-			letter-spacing: .1em;
+			font-size: .54rem;
+			letter-spacing: .08em;
 			text-transform: uppercase;
-			color: rgba(255, 255, 255, .4);
+			color: rgba(255, 255, 255, .35);
 			text-decoration: none;
-			transition: color .15s
+			transition: color .12s
 		}
 
 		.f-nav a:hover {
-			color: var(--yellow)
+			color: var(--yel)
 		}
 
 		.f-r {
 			font-family: var(--mono);
-			font-size: .54rem;
-			color: rgba(255, 255, 255, .2)
+			font-size: .52rem;
+			color: rgba(255, 255, 255, .18)
 		}
 
 		.fi {
@@ -671,7 +756,18 @@
 			transform: none
 		}
 
-		@media(max-width:1000px) {
+		/* RESPONSIVE */
+		@media(max-width:768px) {
+
+			.n-links,
+			.n-cta {
+				display: none
+			}
+
+			.n-ham {
+				display: flex
+			}
+
 			.ph {
 				grid-template-columns: 1fr
 			}
@@ -680,13 +776,21 @@
 				display: none
 			}
 
+			.ph-l {
+				padding: 2.5rem 1.5rem 2rem
+			}
+
 			.edu-cards {
 				grid-template-columns: 1fr
 			}
 
-			.edu-card {
+			.ec {
 				border-right: none;
-				border-bottom: var(--border)
+				border-bottom: var(--bd)
+			}
+
+			.ec:last-child {
+				border-bottom: none
 			}
 
 			.sk-outer {
@@ -697,25 +801,42 @@
 				border-right: none
 			}
 
-			.resume-cta {
+			.rc {
+				padding: 2.5rem 1.5rem;
 				flex-direction: column;
-				gap: 2rem;
-				padding: 2.5rem
+				align-items: flex-start;
+				gap: 1.8rem
 			}
 
-			.n-links {
+			.rc-actions {
+				width: 100%
+			}
+
+			.rc-actions .btn {
+				width: 100%;
+				justify-content: center
+			}
+
+			.sh-meta {
 				display: none
 			}
 
-			nav {
-				padding: 0
+			footer {
+				padding: 1.2rem 1.5rem
+			}
+		}
+
+		@media(max-width:480px) {
+			.ph-l {
+				padding: 2rem 1.2rem 1.8rem
 			}
 
-			footer {
-				flex-direction: column;
-				gap: .8rem;
-				padding: 1.5rem 2rem;
-				text-align: center
+			.ec {
+				padding: 1.5rem
+			}
+
+			.sg {
+				padding: 1.3rem
 			}
 		}
 	</style>
@@ -723,33 +844,46 @@
 
 <body>
 	<div id="cur"></div>
-	<nav>
-		<a href="index.html" class="n-logo">AP.</a>
-		<div class="n-links"><a href="index.html">Projects</a><a href="generic.html">Experience</a><a
-				href="elements.html" class="on">Education</a><a
-				href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/" target="_blank">LinkedIn ↗</a><a
-				href="https://github.com/Aawaizp" target="_blank">GitHub ↗</a></div>
-		<a href="mailto:aawaizpatel1@gmail.com" class="n-cta">Hire Me →</a>
-	</nav>
 
-	<!-- PAGE HEADER — yellow, different from generic.html's black header -->
+	<nav>
+		<a href="index.html" class="n-brand">
+			<div class="n-brand-mark">Aw</div><span class="n-brand-name">Aawaiz</span>
+		</a>
+		<div class="n-links">
+			<a href="index.html">Home</a>
+			<a href="index.html#projects">Projects</a>
+			<a href="generic.html">Experience</a>
+			<a href="elements.html" class="on">Education</a>
+		</div>
+		<a href="mailto:aawaizpatel1@gmail.com" class="n-cta">Hire Me →</a>
+		<button class="n-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+	</nav>
+	<div class="n-mob" id="mob">
+		<a href="index.html">Home</a>
+		<a href="index.html#projects">Projects</a>
+		<a href="generic.html">Experience</a>
+		<a href="elements.html" class="on">Education</a>
+		<a href="mailto:aawaizpatel1@gmail.com">Hire Me →</a>
+	</div>
+
+	<!-- PAGE HEADER — yellow, distinct from generic.html's black -->
 	<div class="ph">
 		<div class="ph-l">
-			<div class="ph-eyebrow">03 / Education</div>
-			<h1 class="ph-title">Education<br>&amp; <em>Skills</em></h1>
+			<div class="ph-ew">03 / Education</div>
+			<h1 class="ph-ttl">Education<br>&amp; <em>Skills</em></h1>
 			<div class="ph-sub">Academic Background · Technical Skills · Resume</div>
 		</div>
 		<div class="ph-r">
 			<div class="ph-stat">
 				<div class="ph-stat-n">2025</div>
-				<div class="ph-stat-l">Graduation Year</div>
+				<div class="ph-stat-l">Graduation</div>
 			</div>
-			<div class="ph-divider"></div>
+			<div class="ph-div"></div>
 			<div class="ph-stat">
 				<div class="ph-stat-n">AI·DS</div>
 				<div class="ph-stat-l">Specialization</div>
 			</div>
-			<div class="ph-divider"></div>
+			<div class="ph-div"></div>
 			<div class="ph-stat">
 				<div class="ph-stat-n">82%</div>
 				<div class="ph-stat-l">HSC Score</div>
@@ -759,174 +893,153 @@
 
 	<!-- EDUCATION -->
 	<section class="fi">
-		<div class="sh-sm sh-blk">
-			<h2>Academic Journey</h2><span>3 Institutions</span>
+		<div class="sh">
+			<div class="sh-num">01</div>
+			<div class="sh-ttl">Academic Journey</div>
+			<div class="sh-meta">3 Institutions</div>
 		</div>
 		<div class="edu-cards">
-
-			<div class="edu-card featured">
-				<div class="edu-year">2022</div>
+			<div class="ec feat">
+				<div class="ec-yr">2022</div>
 				<div>
-					<div class="edu-degree">B.Tech in Artificial Intelligence & Data Science</div>
-					<div class="edu-inst" style="margin-top:.4rem">N.K. Orchid College of Engg & Tech</div>
-					<div class="edu-univ">DBATU University · Solapur · 2022–2025</div>
+					<div class="ec-deg">B.Tech — AI & Data Science</div>
+					<div class="ec-inst" style="margin-top:.35rem">N.K. Orchid College · DBATU · Solapur</div>
 				</div>
-				<p class="edu-desc">B.Tech in AI & Data Science with deep focus on ML, deep learning, and data
-					analytics. Complemented by internships and 9+ real-world projects delivered beyond the curriculum.
-				</p>
-				<div class="edu-courses">
-					<span class="edu-c">ML & Deep Learning</span><span class="edu-c">DSA</span><span
-						class="edu-c">DBMS</span>
-					<span class="edu-c">Data Analytics</span><span class="edu-c">Web Dev</span><span class="edu-c">Cloud
-						Computing</span>
-					<span class="edu-c">Python</span><span class="edu-c">Business Intelligence</span>
-				</div>
+				<p class="ec-desc">B.Tech in AI & Data Science — deep focus on ML, deep learning, data analytics.
+					Complemented by internships and 9+ real-world projects beyond the curriculum.</p>
+				<div class="ec-courses"><span class="ec-c">ML & Deep Learning</span><span class="ec-c">DSA</span><span
+						class="ec-c">DBMS</span><span class="ec-c">Data Analytics</span><span class="ec-c">Web
+						Dev</span><span class="ec-c">Cloud</span><span class="ec-c">Python</span><span
+						class="ec-c">Business Intelligence</span></div>
 			</div>
-
-			<div class="edu-card">
-				<div class="edu-year">2021</div>
+			<div class="ec">
+				<div class="ec-yr">2021</div>
 				<div>
-					<div class="edu-degree">Higher Secondary Certificate (HSC)</div>
-					<div class="edu-inst" style="margin-top:.4rem">SSA Jr. College of Science, Solapur</div>
+					<div class="ec-deg">HSC — Science</div>
+					<div class="ec-inst" style="margin-top:.35rem">SSA Jr. College of Science, Solapur</div>
 				</div>
-				<div class="edu-score">🏅 82.43%</div>
-				<p class="edu-desc">Completed HSC with Science stream (Physics, Chemistry, Mathematics), building strong
-					analytical and problem-solving foundations.</p>
-				<div class="edu-courses"><span class="edu-c">Physics</span><span class="edu-c">Chemistry</span><span
-						class="edu-c">Mathematics</span></div>
+				<div class="ec-score">🏅 82.43%</div>
+				<p class="ec-desc">Science stream (Physics, Chemistry, Mathematics) — building strong analytical
+					foundations.</p>
+				<div class="ec-courses"><span class="ec-c">Physics</span><span class="ec-c">Chemistry</span><span
+						class="ec-c">Mathematics</span></div>
 			</div>
-
-			<div class="edu-card">
-				<div class="edu-year">2019</div>
+			<div class="ec">
+				<div class="ec-yr">2019</div>
 				<div>
-					<div class="edu-degree">Secondary School Certificate (SSC)</div>
-					<div class="edu-inst" style="margin-top:.4rem">M.A. Pangal School, Solapur</div>
+					<div class="ec-deg">SSC — Secondary</div>
+					<div class="ec-inst" style="margin-top:.35rem">M.A. Pangal School, Solapur</div>
 				</div>
-				<div class="edu-score">🏅 72.73%</div>
-				<p class="edu-desc">Completed secondary education with focus on mathematics, science, and computer
-					fundamentals. Core problem-solving and logical reasoning skills.</p>
-				<div class="edu-courses"><span class="edu-c">Mathematics</span><span class="edu-c">Science</span><span
-						class="edu-c">Computers</span></div>
+				<div class="ec-score">🏅 72.73%</div>
+				<p class="ec-desc">Secondary education with mathematics, science, and computer fundamentals. Core
+					problem-solving and logical reasoning skills.</p>
+				<div class="ec-courses"><span class="ec-c">Mathematics</span><span class="ec-c">Science</span><span
+						class="ec-c">Computers</span></div>
 			</div>
-
 		</div>
 	</section>
 
 	<!-- SKILLS -->
 	<section class="fi">
-		<div class="sh-sm">
-			<h2>Technical Skills</h2><span>Full Stack</span>
+		<div class="sh">
+			<div class="sh-num">02</div>
+			<div class="sh-ttl">Technical Skills</div>
+			<div class="sh-meta">Full Stack</div>
 		</div>
 		<div class="sk-outer">
 			<div class="sk-col">
 				<div class="sg">
-					<div class="sg-h"><span class="sg-ico">🐍</span><span class="sg-lbl">Python & Libraries</span></div>
-					<div class="chips">
-						<span class="chip hot">Python</span><span class="chip hot">Pandas</span><span
-							class="chip hot">NumPy</span>
-						<span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span
-							class="chip">Plotly</span>
-						<span class="chip">Scikit-learn</span><span class="chip">XGBoost</span><span
-							class="chip">OpenCV</span><span class="chip">HuggingFace</span>
-					</div>
+					<div class="sg-h"><span>🐍</span><span class="sg-lbl">Python & Libraries</span></div>
+					<div class="chips"><span class="chip h">Python</span><span class="chip h">Pandas</span><span
+							class="chip h">NumPy</span><span class="chip">Matplotlib</span><span
+							class="chip">Seaborn</span><span class="chip">Scikit-learn</span><span
+							class="chip">XGBoost</span><span class="chip">OpenCV</span><span
+							class="chip">HuggingFace</span></div>
 				</div>
 				<div class="sg">
-					<div class="sg-h"><span class="sg-ico">🗄️</span><span class="sg-lbl">SQL & Databases</span></div>
-					<div class="chips">
-						<span class="chip hot">SQL</span><span class="chip hot">MySQL</span><span class="chip hot">SQL
-							Server</span>
-						<span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span
-							class="chip">SQLAlchemy</span>
-						<span class="chip">CTEs</span><span class="chip">Window Functions</span><span
-							class="chip">Joins</span>
-					</div>
+					<div class="sg-h"><span>🗄️</span><span class="sg-lbl">SQL & Databases</span></div>
+					<div class="chips"><span class="chip h">SQL</span><span class="chip h">MySQL</span><span
+							class="chip h">SQL Server</span><span class="chip">PostgreSQL</span><span
+							class="chip">SQLite</span><span class="chip">SQLAlchemy</span><span
+							class="chip">CTEs</span><span class="chip">Window Fns</span></div>
 				</div>
 				<div class="sg">
-					<div class="sg-h"><span class="sg-ico">📈</span><span class="sg-lbl">BI & Reporting</span></div>
-					<div class="chips">
-						<span class="chip red">Power BI</span><span class="chip red">DAX</span><span
-							class="chip red">Power Query</span>
-						<span class="chip red">Tableau</span><span class="chip">Excel</span>
-						<span class="chip">KPI Design</span><span class="chip">Dashboard Design</span><span
-							class="chip">Scenario Analysis</span>
-					</div>
+					<div class="sg-h"><span>📈</span><span class="sg-lbl">BI & Reporting</span></div>
+					<div class="chips"><span class="chip r">Power BI</span><span class="chip r">DAX</span><span
+							class="chip r">Power Query</span><span class="chip r">Tableau</span><span
+							class="chip">Excel</span><span class="chip">KPI Design</span><span
+							class="chip">Storytelling</span></div>
 				</div>
 			</div>
 			<div class="sk-col">
 				<div class="sg">
-					<div class="sg-h"><span class="sg-ico">⚙️</span><span class="sg-lbl">Data Engineering & ETL</span>
-					</div>
-					<div class="chips">
-						<span class="chip blu">ETL Pipelines</span><span class="chip blu">Medallion Architecture</span>
-						<span class="chip blu">Star Schema</span><span class="chip blu">Data Warehousing</span>
-						<span class="chip">Fact & Dim Tables</span><span class="chip">Data Modeling</span><span
-							class="chip">Data Transformation</span>
-					</div>
+					<div class="sg-h"><span>⚙️</span><span class="sg-lbl">Data Engineering</span></div>
+					<div class="chips"><span class="chip b">ETL Pipelines</span><span class="chip b">Medallion
+							Arch</span><span class="chip b">Star Schema</span><span class="chip b">Data
+							Warehousing</span><span class="chip">Fact & Dim Tables</span><span class="chip">Data
+							Modeling</span></div>
 				</div>
 				<div class="sg">
-					<div class="sg-h"><span class="sg-ico">🤖</span><span class="sg-lbl">AI · ML · NLP · GenAI</span>
-					</div>
-					<div class="chips">
-						<span class="chip hot">Machine Learning</span><span class="chip hot">Classification</span>
-						<span class="chip hot">Feature Engineering</span><span class="chip">NLP & Text
-							Classification</span>
-						<span class="chip">LLMs (LLaMA 3, T5)</span><span class="chip">GenAI</span><span
-							class="chip">Agentic AI</span>
-						<span class="chip">Computer Vision</span><span class="chip">Model Evaluation</span>
-					</div>
+					<div class="sg-h"><span>🤖</span><span class="sg-lbl">AI · ML · NLP · GenAI</span></div>
+					<div class="chips"><span class="chip h">Machine Learning</span><span
+							class="chip h">Classification</span><span class="chip h">Feature Eng</span><span
+							class="chip">NLP</span><span class="chip">LLMs (LLaMA, T5)</span><span
+							class="chip">GenAI</span><span class="chip">Agentic AI</span><span class="chip">Computer
+							Vision</span></div>
 				</div>
 				<div class="sg">
-					<div class="sg-h"><span class="sg-ico">🛠️</span><span class="sg-lbl">Frameworks, Cloud &
-							Tools</span></div>
-					<div class="chips">
-						<span class="chip hot">Flask</span><span class="chip hot">Streamlit</span><span
-							class="chip">Django</span>
-						<span class="chip">Oracle Cloud OCI</span><span class="chip">Git / GitHub</span>
-						<span class="chip">Jupyter</span><span class="chip">Google Colab</span><span
-							class="chip">Supabase</span>
-					</div>
+					<div class="sg-h"><span>🛠️</span><span class="sg-lbl">Frameworks & Cloud</span></div>
+					<div class="chips"><span class="chip h">Flask</span><span class="chip h">Streamlit</span><span
+							class="chip">Django</span><span class="chip">Oracle Cloud OCI</span><span class="chip">Git /
+							GitHub</span><span class="chip">Jupyter</span><span class="chip">Supabase</span></div>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- RESUME CTA -->
-	<div class="resume-cta fi">
-		<div class="rc-txt">
+	<div class="rc fi">
+		<div>
 			<div class="rc-big">Download<br><em>My Resume</em></div>
-			<div class="rc-sub">Last Updated October 2025 · PDF Format</div>
+			<div class="rc-sub">Last Updated Oct 2025 · PDF</div>
 		</div>
 		<div class="rc-actions">
 			<a href="https://aawaizp.github.io/AawaizPortfolio.github.io/assets/resume/Aawaiz%20Patel%20-%209307034091(2).pdf"
 				target="_blank" class="btn btn-yel">↓ Download Resume (PDF)</a>
-			<a href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/" target="_blank" class="btn btn-wht">View
-				LinkedIn Profile ↗</a>
+			<a href="https://www.linkedin.com/in/aawaiz-patel-bb8462286/" target="_blank" class="btn btn-wht">LinkedIn
+				Profile ↗</a>
 		</div>
 	</div>
 
 	<div class="pnav">
-		<a href="index.html" class="pn">
-			<div class="pn-dir">← Go to</div>
-			<div class="pn-ttl">Projects</div>
-		</a>
 		<a href="generic.html" class="pn">
-			<div class="pn-dir">Go to →</div>
+			<div class="pn-dir">← Previous</div>
 			<div class="pn-ttl">Experience</div>
+		</a>
+		<a href="index.html" class="pn">
+			<div class="pn-dir">Back to →</div>
+			<div class="pn-ttl">Home & Projects</div>
 		</a>
 	</div>
 
 	<footer>
 		<div class="f-l">© 2025 <strong>Aawaiz Patel</strong> · Solapur, India</div>
-		<div class="f-nav"><a href="index.html">Work</a><a href="generic.html">Experience</a><a
-				href="elements.html">Education</a><a href="https://github.com/Aawaizp" target="_blank">GitHub</a></div>
-		<div class="f-r">AI & Data Science Engineer</div>
+		<div class="f-nav"><a href="index.html">Home</a><a href="index.html#projects">Projects</a><a
+				href="generic.html">Experience</a><a href="elements.html">Education</a><a
+				href="https://github.com/Aawaizp" target="_blank">GitHub</a></div>
+		<div class="f-r">AI & Data Science</div>
 	</footer>
 
 	<script>
 		const cur = document.getElementById('cur');
-		document.addEventListener('mousemove', e => { cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px' });
-		document.querySelectorAll('a,button,.chip').forEach(el => { el.addEventListener('mouseenter', () => { cur.style.width = '28px'; cur.style.height = '28px'; cur.style.borderRadius = '4px' }); el.addEventListener('mouseleave', () => { cur.style.width = '14px'; cur.style.height = '14px'; cur.style.borderRadius = '50%' }) });
-		const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v') }), { threshold: .06 });
+		if (window.matchMedia('(hover:hover)').matches) {
+			document.addEventListener('mousemove', e => { cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px' });
+			document.querySelectorAll('a,button,.chip').forEach(el => { el.addEventListener('mouseenter', () => { cur.style.width = '26px'; cur.style.height = '26px'; cur.style.borderRadius = '3px' }); el.addEventListener('mouseleave', () => { cur.style.width = '12px'; cur.style.height = '12px'; cur.style.borderRadius = '50%' }) });
+		}
+		const ham = document.getElementById('ham'), mob = document.getElementById('mob');
+		ham.addEventListener('click', () => mob.classList.toggle('open'));
+		mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+		const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v') }), { threshold: .05 });
 		document.querySelectorAll('.fi').forEach(el => io.observe(el));
 	</script>
 </body>
